@@ -5,6 +5,7 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class PartnerType extends AbstractType
 {
@@ -13,7 +14,12 @@ class PartnerType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name')->add('logo')->add('url')->add('alt')->add('rank');
+        $builder
+            ->add('name')
+            ->add('logoFile', VichFileType::class)
+            ->add('url')
+            ->add('alt')
+            ->add('rank');
     }
     
     /**

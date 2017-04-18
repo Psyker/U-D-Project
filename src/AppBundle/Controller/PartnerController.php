@@ -26,7 +26,7 @@ class PartnerController extends Controller
 
         $partners = $em->getRepository('AppBundle:Partner')->findAll();
 
-        return $this->renderView('partner/index.html.twig', array(
+        return $this->render('partner/index.html.twig', array(
             'partners' => $partners,
         ));
     }
