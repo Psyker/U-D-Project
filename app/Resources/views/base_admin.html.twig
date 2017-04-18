@@ -52,8 +52,11 @@
                 </li>
             </ul>
         </div>
+        <div class="column col-10">
+            <div class="container">
+                {% block body %}{% endblock %}
+            </div>
     </div>
-    {% block body %}{% endblock %}
 </div>
 {% block javascripts %}{% endblock %}
 </body>
