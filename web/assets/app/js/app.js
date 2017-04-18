@@ -4,3 +4,4 @@ console.log(scrollTrigger)
 import './animation/smoothFadeIn.js'
 
 smoothFadeIn.init('#status');
+alert('plip plop')
