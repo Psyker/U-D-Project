@@ -12,7 +12,7 @@ let scrollTrigger = {
     },
 
     trigger (elementParent, elementChild, offset) {
-        elementParent <= elementChild - offset ? true : false;
+       return elementParent <= elementChild - offset ? true : false;
     }
 }
 
