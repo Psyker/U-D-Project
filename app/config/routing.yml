@@ -1,3 +1,8 @@
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+
+app_partner:
+    resource: '@AppBundle/Controller/PartnerController.php'
+    prefix: /admin
+    type: annotation
