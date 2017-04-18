@@ -1,7 +1,9 @@
+//Utils
 import './utils/scrollTrigger'
-import './components/graphic'
-console.log(scrollTrigger)
+
+//Animation
 import './animation/smoothFadeIn.js'
 
-smoothFadeIn.init('#status');
-alert('plip plop')
+//Components
+import './components/graphic'
+
