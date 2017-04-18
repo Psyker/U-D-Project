@@ -8,16 +8,11 @@ let scrollTrigger = {
         let elementOffset = element.getBoundingClientRect();
         console.log(elementOffset.top);
 
-        this.trigger(scrollBody, elementOffset, window.innerHeight/2)
+        this.trigger(scrollBody, elementOffset, window.innerHeight / 2)
     },
 
-    trigger (elementParent, elementChild, offset ) {
-        elementParent <= elementChild - offset ?  true : false;
-    },
-
-    init (element) {
-       getScrollStatus(element, false)
-        console.log('utils/scrollTrigger')
+    trigger (elementParent, elementChild, offset) {
+        elementParent <= elementChild - offset ? true : false;
     }
 }
 
