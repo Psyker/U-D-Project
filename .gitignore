@@ -16,3 +16,5 @@
 /web/bundles/
 .idea
 .DS_Store
+node_modules/
+web/assets/dist/
