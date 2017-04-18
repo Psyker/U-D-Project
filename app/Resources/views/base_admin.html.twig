@@ -3,16 +3,58 @@
 <head>
     <meta charset="UTF-8" />
     <title>{% block title %}Back-Office{% endblock %}</title>
-    {% block stylesheets %}{% endblock %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('assets/app/lib/spectre/spectre.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/app/lib/spectre/spectre-exp.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/app/lib/spectre/spectre-icons.min.css') }}">
+    {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/dist/css/style.min.css') }}">
+
 </head>
 <body>
 <div class="container">
+    <div class="columns">
+        <div class="column col-2" style="padding: 0; height: 100vh; background-color: #f8f9fa;">
+            <ul class="nav pt-10 pl-10 pb-10" style="">
+                <li class="nav-item">
+                    <a href="#">Accueil</a>
+                </li>
+                <li class="nav-item active">
+                    <a href="#">Contacts</a>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a href="#">Boîte de récéption</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ path('contact_index') }}">Utilisateurs</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item active">
+                    <a href="#">Contenue</a>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a href="#">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">Savoir-faire</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">Chiffres clés</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">...</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item active">
+                    <a href="#">Partenaires</a>
+                </li>
+            </ul>
+        </div>
+    </div>
     {% block body %}{% endblock %}
 </div>
 {% block javascripts %}{% endblock %}
-
-<script src="{{ asset('assets/dist/js/bundle.js') }}"></script>
 </body>
 </html>
