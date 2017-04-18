@@ -3,12 +3,16 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Partner
  *
  * @ORM\Table(name="partner")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PartnerRepository")
+ * @Vich\Uploadable
  */
 class Partner
 {
@@ -31,9 +35,28 @@ class Partner
     /**
      * @var string
      *
-     * @ORM\Column(name="logo", type="string", length=255)
+     * @ORM\Column(name="logoName", type="string", length=255)
      */
-    private $logo;
+    private $logoName;
+
+    /**
+     * @Assert\File(
+     *     maxSize="5M",
+     *     mimeTypes={"image/png", "image/jpeg", "image/pjpeg"}
+     * )
+     * @Vich\UploadableField(mapping="logoName", fileNameProperty="logoName")
+     *
+     * @var UploadedFile $logo_virtual
+     *
+     * This is the virtual field that will populate logo with the resulting file.
+     */
+    protected $logoFile;
+
+    /**
+     * @var \DateTime
+     * @ORM\Column(name="updated_at", type="datetime")
+     */
+    private $updatedAt;
 
     /**
      * @var string
@@ -89,30 +112,6 @@ class Partner
     public function getName()
     {
         return $this->name;
-    }
-
-    /**
-     * Set logo
-     *
-     * @param string $logo
-     *
-     * @return Partner
-     */
-    public function setLogo($logo)
-    {
-        $this->logo = $logo;
-
-        return $this;
-    }
-
-    /**
-     * Get logo
-     *
-     * @return string
-     */
-    public function getLogo()
-    {
-        return $this->logo;
     }
 
     /**
@@ -185,6 +184,68 @@ class Partner
     public function getRank()
     {
         return $this->rank;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * @param mixed $updatedAt
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+    }
+
+    /**
+     * @param UploadedFile $image
+     *
+     * @return Partner
+     */
+    public function setLogoFile(UploadedFile $image = null)
+    {
+        $this->logoFile = $image;
+
+        if ($image) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return UploadedFile|null
+     */
+    public function getLogoFile()
+    {
+        return $this->logoFile;
+    }
+
+    /**
+     * @param string $logoName
+     *
+     * @return Partner
+     */
+    public function setLogoName($logoName)
+    {
+        $this->logoName = $logoName;
+
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getLogoName()
+    {
+        return $this->logoName;
     }
 }
 
