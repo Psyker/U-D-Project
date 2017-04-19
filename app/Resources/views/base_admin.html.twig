@@ -15,36 +15,37 @@
 <div class="container">
     <div class="columns">
         <div class="column col-2" style="padding: 0; height: 100vh; background-color: #f8f9fa;">
-            <ul class="nav pt-10 pl-10 pb-10" style="">
+            <div class="panel">
+                <div class="panel-header centered">
+                    <div class="panel-title mt-5"><img src="{{ asset('Logo.png') }}" style="height: 100px;" alt=""></div>
+                </div>
+            </div>
+            <ul class="nav pt-10 pl-10 pb-10 ml-10" style="">
                 <li class="nav-item">
-                    <a href="#">Accueil</a>
+                    <a href={{ path('homepage') }}>Voir le site</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ path('admin_index') }}">Accueil</a>
                 </li>
                 <li class="nav-item active">
                     <a href="#">Contacts</a>
                     <ul class="nav">
                         <li class="nav-item">
-                            <a href="#">Boîte de récéption</a>
+                            <a href="{{ path('contact_inbox_index') }}">Boîte de récéption</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ path('contact_index') }}">Utilisateurs</a>
+                            <a href="{{ path('contact_index') }}">Carnet d'appel</a>
                         </li>
                     </ul>
                 </li>
                 <li class="nav-item active">
-                    <a href="#">Contenue</a>
+                    <a href="#">Contenus</a>
                     <ul class="nav">
+                        {% for contentBlock in content_block_service.contentBlock %}
                         <li class="nav-item">
-                            <a href="#">Accueil</a>
+                            <a href="{{ path('content_block_show', {'id': contentBlock.id}) }}">{{ contentBlock.name }}</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#">Savoir-faire</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#">Chiffres clés</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#">...</a>
-                        </li>
+                        {% endfor %}
                     </ul>
                 </li>
                 <li class="nav-item active">
@@ -53,6 +54,15 @@
             </ul>
         </div>
         <div class="column col-10">
+            {% for type, flashMessages in app.session.flashbag.all() %}
+                {% for flashMessage in flashMessages %}
+                    <div class="toast toast-{{ type }}"
+                         role="alert">
+                        <button type="button" class="btn btn-clear float-right" ></button>
+                        {{ flashMessage|raw }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
             <div class="container">
                 {% block body %}{% endblock %}
             </div>

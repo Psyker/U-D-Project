@@ -36,6 +36,12 @@ class Contact
     private $lastname;
 
     /**
+     * @var string
+     * @ORM\Column(name="message", type="text", nullable=true)
+     */
+    private $message;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="phone", type="integer", unique=true, nullable=true)
@@ -186,5 +192,22 @@ class Contact
     {
         return $this->callAt;
     }
+
+    /**
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->message;
+    }
+
+    /**
+     * @param string $message
+     */
+    public function setMessage(string $message)
+    {
+        $this->message = $message;
+    }
+
 }
 

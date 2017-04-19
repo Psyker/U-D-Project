@@ -12,4 +12,22 @@ use Doctrine\ORM\EntityRepository;
  */
 class ContactRepository extends EntityRepository
 {
+    public function countInboxMessages()
+    {
+        return $this->createQueryBuilder('c')
+            ->select('COUNT(c)')
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
+
+    public function countPhoneBack()
+    {
+        return $this->createQueryBuilder('c')
+            ->select('COUNT(c)')
+            ->where('c.phone IS NOT NULL')
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
+
+
 }
