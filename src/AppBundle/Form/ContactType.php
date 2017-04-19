@@ -79,6 +79,12 @@ class ContactType extends AbstractType
             ])
             ->add('callAt', DateTimeType::class, array(
                 'date_widget' => "single_text",
+                'label_attr' => [
+                    'class' => 'form__label'
+                ],
+                'attr' => [
+                    'class' => 'container__form__input'
+                ],
                 'html5' => true,
                 'format' => DateTimeType::HTML5_FORMAT
             ));
