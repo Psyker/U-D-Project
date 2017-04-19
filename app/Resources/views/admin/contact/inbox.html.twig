@@ -4,7 +4,7 @@
 
     <h1>Boite de récéption</h1>
     {% for contact in contacts %}
-        <div class="tile">
+        <div class="tile mt-10 pt-10">
             <div class="tile-icon">
                 <div class="example-tile-icon">
                     <i class="icon icon-file centered"></i>
@@ -14,6 +14,7 @@
                 <p class="tile-title">{{ contact.firstname }} {{ contact.lastname }}</p>
                 <p class="tile-title">{{ contact.email }}</p>
                 <p class="tile-subtitle">{{ contact.message }}</p>
+                <p class="tile-subtitle"{{ contact.createdAt|date('Y-m-d H:i:s') }}></p>
             </div>
             <div class="tile-action">
                 <button class="btn btn-primary">Contacter</button>

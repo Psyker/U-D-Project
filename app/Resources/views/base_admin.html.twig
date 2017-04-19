@@ -4,15 +4,17 @@
     <meta charset="UTF-8" />
     <title>{% block title %}Back-Office{% endblock %}</title>
     {% block stylesheets %}
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Poppins" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('assets/app/lib/spectre/spectre.min.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/app/lib/spectre/spectre-exp.min.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/app/lib/spectre/spectre-icons.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/app/lib/spectre/custom.css') }}">
     {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 
 </head>
 <body>
-<div class="container">
+<div class="container"> 
     <div class="columns">
         <div class="column col-2" style="padding: 0; height: 100vh; background-color: #f8f9fa;">
             <div class="panel">
@@ -22,10 +24,7 @@
             </div>
             <ul class="nav pt-10 pl-10 pb-10 ml-10" style="">
                 <li class="nav-item">
-                    <a href={{ path('homepage') }}>Voir le site</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ path('admin_index') }}">Accueil</a>
+                    <a class="text-bold" href="{{ path('admin_index') }}">Tableau de bord</a>
                 </li>
                 <li class="nav-item active">
                     <a href="#">Contacts</a>
@@ -37,6 +36,10 @@
                             <a href="{{ path('contact_index') }}">Carnet d'appel</a>
                         </li>
                     </ul>
+                </li>
+                <li class="divider"></li>
+                <li class="nav-item active">
+                    <a href="{{ path('quotes_index') }}">Citations</a>
                 </li>
                 <li class="nav-item active">
                     <a href="#">Contenus</a>
@@ -50,6 +53,9 @@
                 </li>
                 <li class="nav-item active">
                     <a href="#">Partenaires</a>
+                </li>
+                <li class="nav-item" style="position:absolute; bottom: 30px">
+                    <a  href={{ path('homepage') }}><i class="icon icon-arrow-left"></i>&nbsp;Retour au site</a>
                 </li>
             </ul>
         </div>
