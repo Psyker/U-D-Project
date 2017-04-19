@@ -1,5 +1,6 @@
 //Utils
 import './utils/scrollTrigger'
+import './components/nav'
 
 //Animation
 // import './animation/smoothFadeIn.js'

@@ -7,19 +7,33 @@
   position: fixed
   bottom: 0
   left: 0
-  right: 0
   display: flex
   background-color: white
+  box-shadow: 1.1px 1.7px 9px 0 rgba(0, 14, 21, 0.2)
+  transition:  transform 0.2s cubic-bezier(0.4, 0.0, 0.2, 1)
   z-index: $z-index-navSticky
   @include medium
+    position: absolute
     padding: 0 5%
-
   @include x-large
     padding: 0 10%
+
+
+.navSticky--active
+  transform: translateY(50px)
+  @include medium
+    transform: translateY(0)
+    position: fixed
+    top: 0
+    bottom: auto
+    left: 0
+    right: 0
+
 
 .navSticky__tab
   width: 40%
   text-align: center
+
   &:nth-child(1)
     display: none
     text-align: left
@@ -30,8 +44,20 @@
       display: block
   & + .navSticky__tab
     width: 25%
+    border-left: 1px solid $gray
+    position: relative
     @include large
       width: 15%
+      border: none
+      &:before
+        content: ' '
+        background: $gray
+        width: 1px
+        height: 20px
+        position: absolute
+        top: 50%
+        left: 0
+        margin: -10px 0 0 0
 
 
 .navSticky__tabLink
