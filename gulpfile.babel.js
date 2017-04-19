@@ -14,6 +14,18 @@ import plugins from "gulp-load-plugins"
 const $ = plugins();
 
 
+gulp.task('images', function () {
+    return gulp.src([
+        'web/assets/app/img/**/*'])
+        .pipe($.cache($.imagemin({
+            optimizationLevel: 3,
+            progressive: true,
+            interlaced: true
+        })))
+        .pipe(gulp.dest('./web/assets/dist/img'))
+        .pipe($.size());
+});
+
 gulp.task("transpile", () => {
     return browserify("web/assets/app/js/app.js", { debug: true })
         .transform("babelify")
@@ -42,12 +54,12 @@ gulp.task('sass', () => {
 });
 
 
-gulp.task('watch', ['transpile', 'sass'], () => {
+gulp.task('watch', ['transpile', 'sass', 'images'], () => {
     gulp.watch('web/assets/app/**/*.js', ['transpile'])
     gulp.watch('web/assets/app/**/*.sass', ['sass'])
 });
 
-gulp.task('default', ['transpile', 'sass']);
+gulp.task('default', ['transpile', 'sass', 'images']);
 
 
 gulp.task('publish', () => {
