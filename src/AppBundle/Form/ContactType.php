@@ -2,14 +2,33 @@
 
 namespace AppBundle\Form;
 
+use Symfony\Component\DependencyInjection\Container;
+use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
 class ContactType extends AbstractType
 {
+
+    private $mailer;
+    private $twig;
+
+    /**
+     * ContactType constructor.
+     */
+    public function __construct(\Swift_Mailer $mailer, \Twig_Environment $twig)
+    {
+        $this->mailer = $mailer;
+        $this->twig = $twig;
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -20,11 +39,27 @@ class ContactType extends AbstractType
             ->add('lastname')
             ->add('phone')
             ->add('email', EmailType::class)
+            ->add('message', TextareaType::class, [
+                'label' => 'message',
+                'attr' => [
+                    'placeholder' => 'votre message'
+                ]
+            ])
             ->add('callAt', DateTimeType::class, array(
                 'date_widget' => "single_text",
                 'html5' => true,
                 'format' => DateTimeType::HTML5_FORMAT
             ));
+
+        $builder->addEventListener(FormEvents::SUBMIT, function(FormEvent $event) {
+            $contact = $event->getData();
+            $message = \Swift_Message::newInstance()
+                ->setSubject("[U&D] Vous avez un nouveau message.")
+                ->setFrom("bourgoi.theo@gmail.com")
+                ->setTo('bourgoi.theo@gmail.com')
+                ->setBody($this->twig->render('admin/mail/message.html.twig'), 'text/html');
+            $this->mailer->send($message);
+        });
     }
     
     /**

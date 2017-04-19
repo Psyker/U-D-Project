@@ -34,6 +34,19 @@ class ContactController extends Controller
     }
 
     /**
+     * @Route("admin/contact/inbox", name="contact_inbox_index")
+     * @return Response
+     */
+    public function inboxAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $contacts = $em->getRepository('AppBundle:Contact')->findAll();
+        return $this->render('admin/contact/inbox.html.twig', [
+            'contacts' => $contacts
+        ]);
+    }
+
+    /**
      * Creates a new contact entity.
      * @Route("contact/new", name="contact_new")
      * @param Request $request
@@ -61,25 +74,6 @@ class ContactController extends Controller
             'form' => $form->createView(),
         ));
     }
-
-    /**
-     * Finds and displays a contact entity.
-     *
-     * @Route("admin/contact/{id}", name="contact_show")
-     * @param Contact $contact
-     * @return Response
-     * @Method("GET")
-     */
-    public function showAction(Contact $contact)
-    {
-        $deleteForm = $this->createDeleteForm($contact);
-
-        return $this->render('admin/contact/show.html.twig', array(
-            'contact' => $contact,
-            'delete_form' => $deleteForm->createView(),
-        ));
-    }
-
 
     /**
      * Deletes a contact entity.

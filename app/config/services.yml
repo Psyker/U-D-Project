@@ -2,3 +2,14 @@
 # http://symfony.com/doc/current/service_container.html
 parameters:
     #parameter_name: value
+
+services:
+    content_block_service:
+        class: AppBundle\Services\ContentBlockService
+        arguments: ["@doctrine.orm.entity_manager"]
+
+    contact_form_type:
+        class: AppBundle\Form\ContactType
+        arguments: ["@mailer", "@twig"]
+        tags:
+          - { name: form.type }
