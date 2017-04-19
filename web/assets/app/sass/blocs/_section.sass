@@ -31,6 +31,12 @@
     bottom: 0
     left: 0
 
+.section__subtitle
+  width: 100%
+  margin: 3.4rem 0 0 0
+  @include medium
+    width: 50%
+
 .section__content
   display: flex
   margin: 3.75rem 0 0 0
@@ -43,3 +49,23 @@
 .section__contact
   background: white
 
+
+
+////////////////////////
+//// section contact ///
+////////////////////////
+
+.section__partenaire
+  .section__content
+    position: relative
+  .swipe
+    width: 100%
+    @include medium
+      width: 70%
+    @include large
+      width: 40%
+  .containerBubbles
+    position: absolute
+    right: 0
+    @include medium
+      position: relative

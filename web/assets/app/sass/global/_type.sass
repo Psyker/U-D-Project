@@ -10,14 +10,21 @@ h1, h2, h3, h4, h5, h6, p, a
   @include font-size(1rem)
   overflow: hidden
   text-overflow: ellipsis
+  font-family: 'Poppins', sans-serif
   color: $gray-base
+
 
 h1, h2, h3, h4, h5, h6, p
   font-family: 'Poppins', sans-serif
-  font-weight: 500
 
 a
   font-weight: 700
+
+h1, h2, h3, h4, a
+  font-weight: 800
+
+p
+  @include font-size(1rem)
 
 h1, .h1
   @include font-size(3.375rem)
@@ -33,9 +40,11 @@ h4, .h4
 
 h5, .h5
   @include font-size(1rem)
+  font-weight: 300
 
 h6, .h6
-  @include font-size(0.75rem)
+  @include font-size(0.8rem)
+  font-weight: 300
 
 .strong-word
   color: $yellow
