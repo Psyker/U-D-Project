@@ -1,36 +1,27 @@
 {% extends 'base_admin.html.twig' %}
 
 {% block body %}
-    <h1>Contacts list</h1>
-
-    <table>
+    <h2>Carnet d'appel</h2>
+    <table class="table table-striped table-hover">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Phone</th>
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>N° Téléphone</th>
                 <th>Email</th>
-                <th>Callat</th>
-                <th>Actions</th>
+                <th>Apeller le</th>
             </tr>
         </thead>
         <tbody>
         {% for contact in contacts %}
             <tr>
-                <td><a href="{{ path('contact_show', { 'id': contact.id }) }}">{{ contact.id }}</a></td>
+                <td>{{ contact.id }}</td>
                 <td>{{ contact.firstname }}</td>
                 <td>{{ contact.lastname }}</td>
-                <td>{{ contact.phone }}</td>
+                <td>+33 {{ contact.phone }}</td>
                 <td>{{ contact.email }}</td>
                 <td>{% if contact.callAt %}{{ contact.callAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('contact_show', { 'id': contact.id }) }}">show</a>
-                        </li>
-                    </ul>
-                </td>
             </tr>
         {% endfor %}
         </tbody>

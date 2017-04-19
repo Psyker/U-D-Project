@@ -3,16 +3,71 @@
 <head>
     <meta charset="UTF-8" />
     <title>{% block title %}Back-Office{% endblock %}</title>
-    {% block stylesheets %}{% endblock %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('assets/app/lib/spectre/spectre.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/app/lib/spectre/spectre-exp.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/app/lib/spectre/spectre-icons.min.css') }}">
+    {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/dist/css/style.min.css') }}">
+
 </head>
 <body>
 <div class="container">
-    {% block body %}{% endblock %}
+    <div class="columns">
+        <div class="column col-2" style="padding: 0; height: 100vh; background-color: #f8f9fa;">
+            <div class="panel">
+                <div class="panel-header centered">
+                    <div class="panel-title mt-5"><img src="{{ asset('Logo.png') }}" style="height: 100px;" alt=""></div>
+                </div>
+            </div>
+            <ul class="nav pt-10 pl-10 pb-10 ml-10" style="">
+                <li class="nav-item">
+                    <a href={{ path('homepage') }}>Voir le site</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ path('admin_index') }}">Accueil</a>
+                </li>
+                <li class="nav-item active">
+                    <a href="#">Contacts</a>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a href="{{ path('contact_inbox_index') }}">Boîte de récéption</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ path('contact_index') }}">Carnet d'appel</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item active">
+                    <a href="#">Contenus</a>
+                    <ul class="nav">
+                        {% for contentBlock in content_block_service.contentBlock %}
+                        <li class="nav-item">
+                            <a href="{{ path('content_block_show', {'id': contentBlock.id}) }}">{{ contentBlock.name }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li class="nav-item active">
+                    <a href="#">Partenaires</a>
+                </li>
+            </ul>
+        </div>
+        <div class="column col-10">
+            {% for type, flashMessages in app.session.flashbag.all() %}
+                {% for flashMessage in flashMessages %}
+                    <div class="toast toast-{{ type }}"
+                         role="alert">
+                        <button type="button" class="btn btn-clear float-right" ></button>
+                        {{ flashMessage|raw }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+            <div class="container">
+                {% block body %}{% endblock %}
+            </div>
+    </div>
 </div>
 {% block javascripts %}{% endblock %}
-
-<script src="{{ asset('assets/dist/js/bundle.js') }}"></script>
 </body>
 </html>

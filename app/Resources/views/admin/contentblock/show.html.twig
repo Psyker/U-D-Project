@@ -1,0 +1,36 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block body %}
+    <h1>Bloc de contenu</h1>
+
+    <h3>Section : {{ contentblock.name }}</h3>
+
+    {{ form_start(form, {'attr': { 'class': 'form-group'}}) }}
+        {{ form_label(form.name, null, {'label_attr': { 'class': 'form-label'} }) }}
+        {{ form_widget(form.name) }}
+    <input class="btn btn-primary mt-10" type="submit" value="Editer">
+    {{ form_end(form) }}
+
+<table class="table table-striped table-hover">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Nom du block</th>
+        <th>Position</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for textblock in textblocks %}
+            <tr>
+                <td>{{ textblock.id }}</td>
+                <td>{{ textblock.name }}</td>
+                <td>{{ textblock.position }}</td>
+                <td>
+                    <a class="btn btn-primary" href="{{ path('text_block_show', { 'id': textblock.id }) }}">Voir</a>
+                </td>
+            </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
