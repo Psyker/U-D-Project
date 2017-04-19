@@ -1,7 +1,6 @@
 {% extends 'base_front.html.twig' %}
 
 {% block body %}
-    {{ render(controller('AppBundle:Contact:new')) }}
 
     <section class="blocPartenaire">
         <div class="swiper-container inner-shadow">
@@ -46,4 +45,6 @@
             <div class="bubble"></div>
         </div>
     </section>
+
+    {{ render(controller('AppBundle:Contact:new')) }}
 {% endblock %}
