@@ -4,6 +4,7 @@
 let smoothScroll = {
     setLinkScroll (element, offset) {
         window.scrollTo(0, element.offsetTop + offset)
+
     },
     init () {
         let linksTab = document.querySelectorAll('.js-scrollAnchor')
@@ -15,5 +16,7 @@ let smoothScroll = {
         }
     }
 };
+
+smoothScroll.init();
 
 export default smoothScroll;
