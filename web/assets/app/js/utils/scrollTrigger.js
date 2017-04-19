@@ -4,6 +4,7 @@ let scrollTrigger = {
             let windowY = window.scrollY;
 
             this.triggerClass('.containerBubbles', 200, windowY);
+
         };
     },
 
