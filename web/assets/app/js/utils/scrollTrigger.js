@@ -1,19 +1,20 @@
-/**
- * Created by Thib on 18/04/2017.
- */
 let scrollTrigger = {
+    init () {
+        window.onscroll = () => {
+            let windowY = window.scrollY;
 
-    getScrollStatus (element, animation) {
-        let scrollBody = window.pageYOffset;
-        let elementOffset = element.getBoundingClientRect();
-        console.log(elementOffset.top);
-
-        this.trigger(scrollBody, elementOffset, window.innerHeight / 2)
+            this.triggerClass('.containerBubbles', 200, windowY);
+        };
     },
 
-    trigger (elementParent, elementChild, offset) {
-       return elementParent <= elementChild - offset ? true : false;
+    triggerClass (el, offset, ref) {
+        let container = document.querySelector(el);
+        let posContainer = container.offsetTop;
+
+        if (ref > (posContainer - offset)) {
+            container.classList.add('active')
+        }
     }
 }
 
-export default scrollTrigger
+scrollTrigger.init();
