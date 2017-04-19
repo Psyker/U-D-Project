@@ -62,6 +62,16 @@ class Contact
      */
     private $callAt;
 
+    /**
+     * @ORM\Column(name="created_at", type="datetime", nullable=true)
+     * @var \DateTime
+     */
+    private $created_at;
+
+    public function __construct()
+    {
+        $this->created_at = new \DateTime();
+    }
 
     /**
      * Get id
@@ -207,6 +217,14 @@ class Contact
     public function setMessage(string $message)
     {
         $this->message = $message;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
     }
 
 }

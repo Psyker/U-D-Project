@@ -26,7 +26,7 @@ class PartnerController extends Controller
 
         $partners = $em->getRepository('AppBundle:Partner')->findAll();
 
-        return $this->render('partner/index.html.twig', array(
+        return $this->render('admin/partner/index.html.twig', array(
             'partners' => $partners,
         ));
     }
@@ -51,7 +51,7 @@ class PartnerController extends Controller
             return $this->redirectToRoute('partner_show', array('id' => $partner->getId()));
         }
 
-        return $this->render('partner/new.html.twig', array(
+        return $this->render('admin/partner/new.html.twig', array(
             'partner' => $partner,
             'form' => $form->createView(),
         ));
@@ -67,7 +67,7 @@ class PartnerController extends Controller
     {
         $deleteForm = $this->createDeleteForm($partner);
 
-        return $this->render('partner/show.html.twig', array(
+        return $this->render('admin/partner/show.html.twig', array(
             'partner' => $partner,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -91,7 +91,7 @@ class PartnerController extends Controller
             return $this->redirectToRoute('partner_edit', array('id' => $partner->getId()));
         }
 
-        return $this->render('partner/edit.html.twig', array(
+        return $this->render('admin/partner/edit.html.twig', array(
             'partner' => $partner,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

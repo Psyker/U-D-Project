@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'base_admin.html.twig' %}
 
 {% block body %}
     <h1>Partners list</h1>
@@ -20,7 +20,7 @@
             <tr>
                 <td><a href="{{ path('partner_show', { 'id': partner.id }) }}">{{ partner.id }}</a></td>
                 <td>{{ partner.name }}</td>
-                <td>{{ partner.logo }}</td>
+                <td>{{ partner.logoName }}</td>
                 <td>{{ partner.url }}</td>
                 <td>{{ partner.alt }}</td>
                 <td>{{ partner.rank }}</td>

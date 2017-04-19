@@ -3,7 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Vich\UploaderBundle\Entity\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -35,18 +35,13 @@ class Partner
     /**
      * @var string
      *
-     * @ORM\Column(name="logoName", type="string", length=255)
+     * @ORM\Column(name="logoName", type="string", length=255, nullable=true)
      */
     private $logoName;
 
     /**
-     * @Assert\File(
-     *     maxSize="5M",
-     *     mimeTypes={"image/png", "image/jpeg", "image/pjpeg"}
-     * )
-     * @Vich\UploadableField(mapping="logoName", fileNameProperty="logoName")
-     *
-     * @var UploadedFile $logo_virtual
+     * @Vich\UploadableField(mapping="logo_image", fileNameProperty="logoName")
+     * @var File $logoFile
      *
      * This is the virtual field that will populate logo with the resulting file.
      */
@@ -202,26 +197,17 @@ class Partner
         $this->updatedAt = $updatedAt;
     }
 
-    /**
-     * @param UploadedFile $image
-     *
-     * @return Partner
-     */
-    public function setLogoFile(UploadedFile $image = null)
+    public function setlogoFile($image = null)
     {
-        $this->logoFile = $image;
-
         if ($image) {
-            // It is required that at least one field changes if you are using doctrine
-            // otherwise the event listeners won't be called and the file is lost
-            $this->updatedAt = new \DateTimeImmutable();
+            $this->logoFile = $image;
+            $this->updatedAt = new \DateTime();
         }
-
         return $this;
     }
 
     /**
-     * @return UploadedFile|null
+     * @return File
      */
     public function getLogoFile()
     {
