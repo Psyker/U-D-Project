@@ -3,8 +3,25 @@ html
 
 body
   @include font-size(0.9rem)
+  font-family: 'Open Sans', sans-serif
 
 
 h1, h2, h3, h4, h5, h6, p, a
   overflow: hidden
   text-overflow: ellipsis
+  @include font-size(12rem)
+
+h1, h2, h3, h4, h5, h6
+  font-family: 'Poppins', sans-serif
+
+h1
+  @include font-size(80rem)
+
+h2
+  @include font-size(54rem)
+
+h3
+  @include font-size(36rem)
+
+h4
+  @include font-size(24rem)

@@ -5,14 +5,17 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-        <link rel="stylesheet" href="https://d2bmpzuwfx796e.cloudfront.net/css/style.min.css.gz">
+        <link rel="stylesheet" href="./assets/dist/css/style.min.css">
     </head>
     <body>
+    {% block header %}
+    {% endblock %}
         <div class="container">
-            {% block body %}{% endblock %}
+            {% block body %}
+            {% endblock %}
         </div>
         {% block javascripts %}{% endblock %}
 
-        <script src="https://d2bmpzuwfx796e.cloudfront.net/js/bundle.js.gz"></script>
+        <script src="./assets/dist/js/bundle.js"></script>
     </body>
 </html>
