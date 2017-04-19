@@ -9,20 +9,34 @@ body
 h1, h2, h3, h4, h5, h6, p, a
   overflow: hidden
   text-overflow: ellipsis
-  color: $grey
-  @include font-size(1rem)
+  color: $gray-base
 
 h1, h2, h3, h4, h5, h6, p
   font-family: 'Poppins', sans-serif
   font-weight: 800
 
-h1
+a
+  font-weight: 700
+
+p
+  @include font-size(1rem)
+
+h1, .h1
+  @include font-size(5.063rem)
+
+h2, .h2
   @include font-size(3.375rem)
 
-h2
+h3, .h3
   @include font-size(2.25rem)
 
-h3
+h4, .h4
   @include font-size(1.5rem)
+
+h5, .h5
+  @include font-size(1rem)
+
+h6, .h6
+  @include font-size(0.75rem)
 
 
