@@ -15,7 +15,7 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $partners = $em->getRepository('AppBundle:Partner')->findAll();
-        return $this->render('default/index.html.twig', [
+        return $this->render('front/default/index.html.twig', [
             'partners' => $partners
         ]);
     }
