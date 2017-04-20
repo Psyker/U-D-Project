@@ -1,0 +1,32 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block body %}
+
+    <h1>Messages envoyés</h1>
+    {% if answers|length > 0 %}
+        {% for answer in answers %}
+            <div class="tile mt-10 pt-10">
+                <div class="tile-icon">
+                    <div class="example-tile-icon">
+                        <i class="icon icon-file centered"></i>
+                    </div>
+                </div>
+                <div class="tile-content">
+                    <p class="tile-title">Envoyé à {{ answer.parent.firstname }} {{ answer.parent.lastname }}</p>
+                    <p class="tile-title">Adresse : {{ answer.parent.email }}</p>
+                    <p class="tile-subtitle">{{ answer.message }}</p>
+                    <p class="tile-subtitle"{{ answer.sendAt|date('Y-m-d H:i:s') }}></p>
+                </div>
+            </div>
+            <div class="divider"></div>
+        {% endfor %}
+    {% else %}
+        <div class="empty">
+            <div class="empty-icon">
+                <i class="icon icon-message"></i>
+            </div>
+            <h4 class="empty-title">Vous n'avez aucun messages</h4>
+        </div>
+    {% endif %}
+
+{% endblock %}

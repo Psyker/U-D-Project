@@ -8,9 +8,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
@@ -19,14 +21,16 @@ class ContactType extends AbstractType
 
     private $mailer;
     private $twig;
+    private $session;
 
     /**
      * ContactType constructor.
      */
-    public function __construct(\Swift_Mailer $mailer, \Twig_Environment $twig)
+    public function __construct(\Swift_Mailer $mailer, \Twig_Environment $twig, Session $session)
     {
         $this->mailer = $mailer;
         $this->twig = $twig;
+        $this->session = $session;
     }
 
     /**
@@ -90,11 +94,10 @@ class ContactType extends AbstractType
             ));
 
         $builder->addEventListener(FormEvents::SUBMIT, function(FormEvent $event) {
-            $contact = $event->getData();
             $message = \Swift_Message::newInstance()
                 ->setSubject("[U&D] Vous avez un nouveau message.")
                 ->setFrom("bourgoi.theo@gmail.com")
-                ->setTo('bourgoi.theo@gmail.com')
+                ->setTo("bourgoi.theo@gmail.com")
                 ->setBody($this->twig->render('admin/mail/message.html.twig'), 'text/html');
             $this->mailer->send($message);
         });
