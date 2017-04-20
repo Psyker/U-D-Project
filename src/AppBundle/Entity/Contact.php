@@ -91,6 +91,7 @@ class Contact
     public function __construct()
     {
         $this->createdAt = new \DateTime();
+        $this->called = false;
     }
 
     /**

@@ -17,7 +17,7 @@ class PartnerController extends Controller
     /**
      * Lists all partner entities.
      *
-     * @Route("admin/partner/", name="partner_index")
+     * @Route("partner/", name="partner_index")
      * @Method("GET")
      */
     public function indexAction()
@@ -34,7 +34,7 @@ class PartnerController extends Controller
     /**
      * Creates a new partner entity.
      *
-     * @Route("admin/partner/new", name="partner_new")
+     * @Route("partner/new", name="partner_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
@@ -60,7 +60,7 @@ class PartnerController extends Controller
     /**
      * Finds and displays a partner entity.
      *
-     * @Route("admin/partner/{id}", name="partner_show")
+     * @Route("partner/{id}", name="partner_show")
      * @Method("GET")
      */
     public function showAction(Partner $partner)
@@ -76,7 +76,7 @@ class PartnerController extends Controller
     /**
      * Displays a form to edit an existing partner entity.
      *
-     * @Route("admin/partner/{id}/edit", name="partner_edit")
+     * @Route("partner/{id}/edit", name="partner_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Partner $partner)
@@ -101,7 +101,7 @@ class PartnerController extends Controller
     /**
      * Deletes a partner entity.
      *
-     * @Route("admin/partner/{id}/delete", name="partner_delete")
+     * @Route("partner/{id}/delete", name="partner_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Partner $partner)
