@@ -40,6 +40,7 @@ class ContactType extends AbstractType
     {
         $builder
             ->add('firstname', null, [
+                'label' => 'Prénom',
                 'label_attr' => [
                     'class' => 'form__label'
                 ],
@@ -48,6 +49,7 @@ class ContactType extends AbstractType
                 ]
             ])
             ->add('lastname', null, [
+                'label' => 'Nom',
                 'label_attr' => [
                     'class' => 'form__label'
                 ],
@@ -56,6 +58,7 @@ class ContactType extends AbstractType
                 ]
             ])
             ->add('phone', null, [
+                'label' => 'Téléphone',
                 'label_attr' => [
                     'class' => 'form__label'
                 ],
@@ -64,6 +67,7 @@ class ContactType extends AbstractType
                 ]
             ])
             ->add('email', EmailType::class, [
+                'label' => 'E-mail',
                 'label_attr' => [
                     'class' => 'form__label'
                 ],
@@ -72,7 +76,7 @@ class ContactType extends AbstractType
                 ]
             ])
             ->add('message', TextareaType::class, [
-                'label' => 'message',
+                'label' => 'Votre Message (optionnel)',
                 'label_attr' => [
                     'class' => 'form__label'
                 ],
@@ -83,6 +87,7 @@ class ContactType extends AbstractType
             ])
             ->add('callAt', DateTimeType::class, array(
                 'date_widget' => "single_text",
+                'label' => 'Date de disponibilité',
                 'label_attr' => [
                     'class' => 'form__label'
                 ],
