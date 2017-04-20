@@ -5,7 +5,7 @@ import jump from 'jump.js'
 
 let smoothScroll = {
     init () {
-        let linksTab = document.querySelectorAll('.navSticky__tabLink');
+        let linksTab = document.querySelectorAll('.js-smoothScroll');
 
         for (let i = 0; i < linksTab.length; i++) {
             linksTab[i].addEventListener('click', function () {

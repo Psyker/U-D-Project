@@ -18,7 +18,7 @@ let countingNumbers = {
                 clearInterval(counter)
                 return false;
             }
-        }, 10);
+        }, 5);
 
     },
     saveElement (element) {

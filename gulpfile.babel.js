@@ -54,7 +54,7 @@ gulp.task('sass', () => {
 });
 
 
-gulp.task('watch', ['transpile', 'sass'], () => {
+gulp.task('watch', ['transpile', 'sass', 'images'], () => {
     gulp.watch('web/assets/app/**/*.js', ['transpile'])
     gulp.watch('web/assets/app/**/*.sass', ['sass'])
 });

@@ -26,6 +26,8 @@ let navSticky = {
             let scroll = window.pageYOffset || document.documentElement.scrollTop;
 
             if (windowWidth <= 768) {
+                document.querySelector('.navSticky__Contact').classList.remove('btn__base');
+
                 if ((scroll > position) && (scroll > 200)) {
                     navSticky.classList.add('navSticky--active');
                 } else {
@@ -36,8 +38,10 @@ let navSticky = {
             } else {
                 if (scroll > (posNavSticky)) {
                     navSticky.classList.add('navSticky--active');
+                    document.querySelector('.navSticky__Contact').classList.add('btn__base');
                 } else {
-                    navSticky.classList.remove('navSticky--active')
+                    navSticky.classList.remove('navSticky--active');
+                    document.querySelector('.navSticky__Contact').classList.remove('btn__base');
                 }
             }
         };

@@ -14,7 +14,7 @@
 <body>
 <div class="container">
     <div class="brandNav">
-        <a href="#" alt="logo U&D" class="brandLogo"><img class="brandLogo__image" src="{{ asset('assets/app/img/pictos/logo-home.svg') }}" alt=""></a>
+        <a title="home" href="#" alt="logo U&D" class="brandLogo" id="brandLogo__image"><img class="brandLogo__image" src="{{ asset('assets/app/img/pictos/logo-home.svg') }}"></a>
     </div>
 
     <header class="section__landing">
@@ -25,7 +25,7 @@
                     <h2 class="h5 section__subtitle">
                         {{ contentBlocks.0.textBlocks.0.content }}
                     </h2>
-                    <a class="btn btn__primary section__landingButton" href="#contact">
+                    <a title="contactez-nous" class="btn btn__primary section__landingButton js-smoothScroll" href="#contact">
                         <span>Contactez-nous facilement</span>
                         <span><img src="{{ asset('assets/dist/img/arrow_right.svg') }}" alt="flèche vers la droite" class="btn__icon"></span>
                     </a>
@@ -38,35 +38,48 @@
         </div>
         <nav class="navSticky">
             <div class="navSticky__tab">
-                <a class="navSticky__tabLink h6" href="#section__jobs">
-                    <img src="{{ asset('assets/dist/img/arrow_down_stripe.svg') }}" alt="flèche vers le bas" class="navSticky__icon">
+                <a class="navSticky__tabLink h6 js-smoothScroll" href="#section__statistics">
+                    <img src="{{ asset('assets/dist/img/arrow_down_stripe.svg') }}" alt="flèche vers le bas" class="navSticky__iconDesktop">
                     <span class="navSticky__label">Allez vers le bas pour découvrir U&D</span>
                 </a>
+                <a href="#brandLogo__image" alt="logo U&D" class="navSticky__scrollTop"><img class="brandLogo__image" src="{{ asset('assets/app/img/pictos/logo-home.svg') }}" alt=""></a>
             </div>
             <div class="navSticky__tab">
-                <a class="navSticky__tabLink h6" href="#numbers">
+                <a title="Chiffres clés" class="navSticky__tabLink h6 js-smoothScroll" href="#section__statistics">
+                    <span class="navSticky__iconMobile">
+                        <img src="{{ asset('assets/dist/img/Stat.svg') }}" alt="flèche vers le bas" class="navSticky__icon">
+                    </span>
                     <span class="navSticky__label">Chiffres clés</span>
                 </a>
             </div>
             <div class="navSticky__tab">
-                <a class="navSticky__tabLink h6" href="#job">
+                <a title="Nos métiers" class="navSticky__tabLink h6 js-smoothScroll" href="#section__jobs">
+                    <span class="navSticky__iconMobile">
+                        <img src="{{ asset('assets/dist/img/Work.svg') }}" alt="flèche vers le bas" class="navSticky__icon">
+                    </span>
                     <span class="navSticky__label">Nos métiers</span>
                 </a>
             </div>
             <div class="navSticky__tab">
-                <a class="navSticky__tabLink h6" href="#partner">
+                <a title="Réseau partenaire" class="navSticky__tabLink h6 js-smoothScroll" href="#section__partenaire">
+                    <span class="navSticky__iconMobile">
+                        <img src="{{ asset('assets/dist/img/People.svg') }}" alt="flèche vers le bas" class="navSticky__icon">
+                    </span>
                     <span class="navSticky__label">Réseau partenaire</span>
                 </a>
             </div>
             <div class="navSticky__tab">
-                <a class="navSticky__tabLink h6" href="#contact">
+                <a title="contact" class="navSticky__tabLink h6 js-smoothScroll navSticky__Contact btn" href="#section__contact">
+                    <span class="navSticky__iconMobile">
+                        <img src="{{ asset('assets/dist/img/Email.svg') }}" alt="flèche vers le bas" class="navSticky__icon">
+                    </span>
                     <span class="navSticky__label">Rentrons en contact</span>
                 </a>
             </div>
         </nav>
     </header>
 
-    <section class="section__statistics" id="numbers">
+    <section class="section__statistics" id="section__statistics">
         <div class="section__numbers section__container">
             <div class="numbers__text">
                 <h2 class="section__title">{{ contentBlocks.1.textBlocks.0.title }}</h2>
