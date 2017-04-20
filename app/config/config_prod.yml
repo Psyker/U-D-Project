@@ -19,3 +19,7 @@ monolog:
             level: debug
         console:
             type: console
+
+swiftmailer:
+    disable_delivery: false
+    delivery_addresses: ['bourgoi.theo@gmail.com']
