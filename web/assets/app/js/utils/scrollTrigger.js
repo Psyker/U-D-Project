@@ -3,8 +3,9 @@ let scrollTrigger = {
         document.onscroll = () => {
             let windowY = window.scrollY;
 
-            this.triggerClass('.containerBubbles', 200, windowY);
+            this.triggerClass('.containerBubbles', 400, windowY);
             this.triggerClass('.number', -100, windowY)
+            this.triggerClass('.section__contact',200, windowY)
         };
     },
 

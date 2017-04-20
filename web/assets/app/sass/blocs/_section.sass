@@ -55,11 +55,16 @@
     max-width: 50%
     display: none
     padding: 0 40px
+    opacity: 0
     img
       width: 100%
       max-width: 100%
     @include medium
       display: block
+  &.active
+    .container__image
+      animation: fade-in-up 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) forwards
+
 
 
 
@@ -105,15 +110,12 @@
     height: 300px
     padding: 37.5px 5% 0 5%
     margin: 0
-    //margin: 0 0 -150px 0
     @include medium
       height: 500px
       padding: 125px 10% 0 10%
-      //margin: 0 0 -250px 0
     @include large
       height: 600px
       padding: 150px 15% 0 15%
-      //margin: 0 0 -300px 0
   .section__content
     width: 90%
     display: block
