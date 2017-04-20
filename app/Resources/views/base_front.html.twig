@@ -14,23 +14,25 @@
 <body>
 <div class="container">
     <a href="#"><img class="header-logo" src="{{ asset('assets/app/img/pictos/logo-home.svg') }}" alt=""></a>
-    <section class="section section__landing-spacer">
-        <div class="section__landing">
-            <div class="landing__text--holder">
-                <h1 class="landing__title">U&D, spécialiste du BTP<span class="strong-word">.</span></h1>
-                <p class="landing__text">
-                    Sed hendrerit suscipit cursus. In lorem leo, vehicula et dictum nec, pellentesque sed orci.
-                    Duis quis ullamcorper tortor. Donec non varius elit. Integer id leo semper
-                </p>
-                <a class="btn btn__primary btn__landing" href="#contact">
-                    <span>Contactez-nous facilement</span>
-                    <span><img src="{{ asset('assets/dist/img/arrow_right.svg') }}" alt="flèche vers la droite" class="btn__icon"></span>
-                </a>
-            </div>
-            <div class="section_img">
-                <img class="section-img landing__img"
-                     src="{{ asset('assets/app/img/house-landing.png') }}"
-                     alt="batiment décoration">
+
+    <section class="section__landing">
+        <div class="section__container">
+            <div class="section__content">
+                <div class="section__header">
+                    <h1 class="section__title">U&D, spécialiste du BTP<span class="text-branding">.</span></h1>
+                    <h2 class="h5 section__subtitle">
+                        Sed hendrerit suscipit cursus. In lorem leo, vehicula et dictum nec, pellentesque sed orci.
+                        Duis quis ullamcorper tortor. Donec non varius elit. Integer id leo semper.
+                    </h2>
+                    <a class="btn btn__primary section__landingButton" href="#contact">
+                        <span>Contactez-nous facilement</span>
+                        <span><img src="{{ asset('assets/dist/img/arrow_right.svg') }}" alt="flèche vers la droite" class="btn__icon"></span>
+                    </a>
+                </div>
+
+                <div class="container__image inner-shadow">
+                    <img src="{{ asset('assets/dist/img/Compo2.png') }}" alt="Logo de partenaire Cat" class="avatar__img">
+                </div>
             </div>
         </div>
         <nav class="navSticky">
@@ -62,6 +64,7 @@
             </div>
         </nav>
     </section>
+
     <section class="section section__numbers--holder" id="numbers">
         <div class="section__numbers">
             <div class="numbers__text">

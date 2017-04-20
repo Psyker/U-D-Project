@@ -6,6 +6,7 @@ let scrollTrigger = {
             this.triggerClass('.containerBubbles', 400, windowY);
             this.triggerClass('.number', -100, windowY)
             this.triggerClass('.section__contact',200, windowY)
+            this.triggerClass('.section__landing',0, windowY)
         };
     },
 
