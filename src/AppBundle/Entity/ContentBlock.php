@@ -33,6 +33,7 @@ class ContentBlock
      * @var TextBlock
      */
     private $textBlocks;
+    
 
     /**
      * Get id
@@ -85,4 +86,3 @@ class ContentBlock
     }
 
 }
-
