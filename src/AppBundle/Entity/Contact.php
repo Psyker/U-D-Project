@@ -68,9 +68,15 @@ class Contact
      */
     private $callAt;
 
+    /**
+     * @ORM\Column(name="created_at", type="datetime", nullable=true)
+     * @var \DateTime
+     */
+    private $createdAt;
+
     public function __construct()
     {
-        $this->createdAt = new \DateTime('now');
+        $this->createdAt = new \DateTime();
     }
 
     /**

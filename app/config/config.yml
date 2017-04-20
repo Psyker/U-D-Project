@@ -68,3 +68,14 @@ swiftmailer:
     transport: gmail
     username: "%mailer_user%"
     password: "%mailer_password%"
+
+vich_uploader:
+    db_driver: orm
+    mappings:
+        logo_image:
+            uri_prefix: assets/app//img/uploads/partner/
+            upload_destination: '%kernel.root_dir%/../web/assets/app/img/uploads/partner'
+            inject_on_load:     false
+            delete_on_update:   true
+            delete_on_remove:   true
+

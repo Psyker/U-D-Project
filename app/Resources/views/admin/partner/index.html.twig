@@ -1,0 +1,30 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block body %}
+    <h1>Liste des partenaires</h1>
+    <p>Seulement les 6 premiers partenaires seront affichés, vous pouvez modifier l'ordre d'apparition des partenaires en cliquant sur le bouton <b>Editer</b>.</p>
+
+    <a class="btn btn-primary mb-10" href="{{ path('partner_new') }}"><i class="icon icon-plus"></i>&nbsp;Ajouter un partenaire</a>
+    <div class="divider"></div>
+    {% for partner in partners %}
+        <div class="card col-3 inline-block">
+            <div class="card-image">
+                <img alt="{{ partner.alt }}" src="{{ asset('assets/app/img/uploads/partner/' ~ partner.logoName) }}" style="height: 200px; width: 100%;" class="img-fit-cover" />
+            </div>
+            <div class="card-header">
+                <h4 class="card-title">{{ partner.name }}</h4>
+                <h6 class="card-subtitle">{{ partner.url }}</h6>
+                <h6 class="card-subtitle">Position : {{ partner.rank }}</h6>
+                {% if partner.rank <= 6 %}
+                    <span class="float-right label label-success">Visible</span>
+                {% else %}
+                    <span class="float-right label label-warning">Invisible</span>
+                {% endif %}
+            </div>
+            <div class="card-footer">
+                <a href="{{ path('partner_edit', {'id': partner.id}) }}" class="btn btn-primary">Editer</a>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}
