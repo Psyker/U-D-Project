@@ -39,21 +39,56 @@ class ContactType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('firstname')
-            ->add('lastname')
-            ->add('phone')
-            ->add('email', EmailType::class)
-            ->add('subject', TextType::class, [
-                'label' => 'Sujet',
+            ->add('firstname', null, [
+                'label_attr' => [
+                    'class' => 'form__label'
+                ],
+                'attr' => [
+                    'class' => 'form__input'
+                ]
+            ])
+            ->add('lastname', null, [
+                'label_attr' => [
+                    'class' => 'form__label'
+                ],
+                'attr' => [
+                    'class' => 'form__input'
+                ]
+            ])
+            ->add('phone', null, [
+                'label_attr' => [
+                    'class' => 'form__label'
+                ],
+                'attr' => [
+                    'class' => 'form__input'
+                ]
+            ])
+            ->add('email', EmailType::class, [
+                'label_attr' => [
+                    'class' => 'form__label'
+                ],
+                'attr' => [
+                    'class' => 'form__input'
+                ]
             ])
             ->add('message', TextareaType::class, [
                 'label' => 'message',
+                'label_attr' => [
+                    'class' => 'form__label'
+                ],
                 'attr' => [
-                    'placeholder' => 'votre message'
+                    'placeholder' => 'votre message',
+                    'class' => 'form__textarea'
                 ]
             ])
             ->add('callAt', DateTimeType::class, array(
                 'date_widget' => "single_text",
+                'label_attr' => [
+                    'class' => 'form__label'
+                ],
+                'attr' => [
+                    'class' => 'container__form__input'
+                ],
                 'html5' => true,
                 'format' => DateTimeType::HTML5_FORMAT
             ));
@@ -67,7 +102,7 @@ class ContactType extends AbstractType
             $this->mailer->send($message);
         });
     }
-    
+
     /**
      * {@inheritdoc}
      */

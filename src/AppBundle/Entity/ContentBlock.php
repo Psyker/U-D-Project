@@ -71,7 +71,7 @@ class ContentBlock
     /**
      * @return TextBlock
      */
-    public function getTextBlocks(): TextBlock
+    public function getTextBlocks()
     {
         return $this->textBlocks;
     }

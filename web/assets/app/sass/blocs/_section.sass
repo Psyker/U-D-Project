@@ -1,7 +1,158 @@
 .section
   display: flex
   justify-content: space-between
-  padding: 0 0 0 80px
+  //padding: 0 0 0 80px
 
 .section-img
   height: 27rem
+
+.section__container
+  padding: 20px
+  @include medium
+    padding: 80px 50px
+  @include large
+    padding: 80px 10%
+  @include x-large
+    width: 1280px
+    max-width: 1280px
+    padding: 80px 20px
+    margin: auto
+
+
+.section__title
+  position: relative
+  padding: 0 0 1.5rem 0
+  &:after
+    content: ' '
+    height: 3px
+    width: 54px
+    background: $brand-primary
+    position: absolute
+    bottom: 0
+    left: 0
+
+.section__subtitle
+  width: 100%
+  margin: 3.4rem 0 0 0
+  @include medium
+    width: 50%
+
+.section__content
+  display: flex
+  margin: 3.75rem 0 0 0
+
+
+////////////////////////
+//// section contact ///
+////////////////////////
+
+.section__contact
+  background: white
+
+
+
+///////////////////////////
+//// section partenaire ///
+///////////////////////////
+.section__partenaire
+  .section__content
+    flex-direction: column
+    @include large
+      flex-direction: row
+  .swipe
+    order: 2
+    width: 100%
+    @include large
+      width: 50%
+      order: 1
+    @include x-large
+      width: 40%
+
+  .containerBubbles
+    width: 100%
+    order: 1
+    margin: 0 auto 80px 0
+    @include large
+      width: 40%
+      order: 2
+      margin: -100px 0 0 10%
+    @include x-large
+      width: 50%
+      margin: -100px 0 0 10%
+
+///////////////////////////
+////     section jobs   ///
+///////////////////////////
+
+.section__jobs
+  background: $gray-base
+  .section__container
+    padding: 60px 20px
+    @include medium
+      padding: 120px 50px 80px 50px
+    @include large
+      padding: 160px 10% 80px 10%
+    @include x-large
+      padding: 160px 20px 80px 0
+  .section__content
+    display: block
+    background: #fcfcfc
+    position: relative
+    box-shadow: 2.6px 4.2px 5px 0 rgba(0, 14, 21, 0.09)
+    padding: 4.38rem 20px
+    margin: 0
+    @include medium
+      padding: 4.38rem 5%
+      margin: 0 0 -200px 0
+    @include large
+      padding: 4.38rem 10%
+  .categories
+    display: flex
+    justify-content: space-between
+    flex-direction: column
+    @include medium
+      flex-direction: row
+  .category
+    width: 100%
+    & + .category
+      margin: 1.875rem 0 0 0
+    @include medium
+      width: 25%
+      & + .category
+        margin: 0
+    &:hover
+      .category__illustration .category__icon
+        transform: rotateZ(90deg)
+        transition: transform 0.4s cubic-bezier(0.4, 0.0, 0.2, 1)
+    &:nth-child(1):hover
+      .category__illustration .category__icon
+        transform: rotateZ(-90deg)
+    &:nth-child(2):hover
+      .category__illustration .category__icon
+        transform: rotateZ(360deg)
+
+  .category__illustration
+    //content: ' '
+    //background: $brand-primary
+    //width: 20px
+    //height: 20px
+    margin: 0 0 2.125rem 0
+    padding: 10px
+    .category__icon
+      transition: transform 0.2s cubic-bezier(0.4, 0.0, 0.2, 1)
+
+  .category__title
+    font-weight: 500
+  .category__desccription
+    padding: 1.25rem 0 0 0
+  .section__description
+    border-top: 1px solid $gray-light
+    padding: 2.74rem 0 0 0
+    margin: 2.74rem 0 0 0
+  .description__paragraph
+    margin: 1.875rem 0 0 0
+
+
+
+.section__jobs + section
+  padding: 200px 0 0 0

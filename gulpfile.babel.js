@@ -14,17 +14,17 @@ import plugins from "gulp-load-plugins"
 const $ = plugins();
 
 
-// gulp.task('images', function () {
-//     return gulp.src([
-//         'web/assets/app/img/**/*'])
-//         .pipe($.cache($.imagemin({
-//             optimizationLevel: 3,
-//             progressive: true,
-//             interlaced: true
-//         })))
-//         .pipe(gulp.dest('./web/assets/dist/img'))
-//         .pipe($.size());
-// });
+gulp.task('images', function () {
+    return gulp.src([
+        'web/assets/app/img/**/*'])
+        .pipe($.cache($.imagemin({
+            optimizationLevel: 3,
+            progressive: true,
+            interlaced: true
+        })))
+        .pipe(gulp.dest('./web/assets/dist/img'))
+        .pipe($.size());
+});
 
 gulp.task("transpile", () => {
     return browserify("web/assets/app/js/app.js", { debug: true })

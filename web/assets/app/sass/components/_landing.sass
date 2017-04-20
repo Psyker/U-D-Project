@@ -3,39 +3,62 @@
 
 .section__landing-spacer
   height: 100vh
+  padding: 0
 
 .section__landing
   width: 100vw
-  padding: 200px 150px 50px 0
   display: flex
   flex-flow: row wrap
-  justify-content: space-around
+  padding: 245px 30px 0 30px
+  @include large
+    padding: 200px 90px 50px 0
+    justify-content: space-around
+
+.section_img
+  position: absolute
+  top: 115px
+  left: 50%
+  z-index: -1
+  @include large
+    position: initial
+    display: flex
+    width: 38vw
+
+.landing__img
+  position: relative
+  left: -50%
+  height: 225px
+  @include large
+    position: initial
+    height: 435px
+
+.landing__text--holder
+  width: 100%
+  @include large
+    width: 40vw
 
 .landing__title
   margin: 20px 0 30px 0
+  @include font-size(1.6875rem)
 
-.landing__img
-  height: 435px
-
-.landing__text--holder
-  width: 40vw
-  display: flex
-  flex-direction: column
-
+.landing__text
+  text-align: center
+  @include medium
+    text-align: left
 
 .landing__cta
   position: relative
   display: block
-  width: 225px
+  width: 275px
   height: 55px
   padding: 19px
-  margin: 85px 0 0 50px
+  margin: 85px auto 0 auto
   background: $yellow
   border-radius: 4px
   line-height: 0.9
   box-shadow: 0 1px 15px -1px #c1c1c1
   &:after
-    content: url('../../app/img/pictos/right-arrow.svg')
+    content: url('../../dist/img/arrow_right.svg')
     color: $grey
     display: block
     width: 20px
@@ -46,20 +69,37 @@
 
 
 
+
+.section__numbers--holder
+  background: #ffffff
+  padding: 100px 37.5px 0
+
 .section__numbers
-  padding: 100px 150px 50px 60px
   width: 100vw
   display: flex
+  @include large
+    padding: 100px 0 50px 0
+
 
 .numbers__text
-  width: 45vw
-  display: flex
-  flex-direction: column
-  justify-content: space-around
+  position: relative
+  z-index: 1
+  width: 100%
+  display: block
+  @include large
+    width: 45vw
+    display: flex
+    flex-direction: column
+    justify-content: space-around
 
 .numbers__title
-  width: 30vw
-  margin: 0 0 110px 0
+  width: 100%
+  margin: 0 0 75px 0
+  @include font-size(1.6875rem)
+  @include medium
+    width: 30vw
+  @include large
+    margin: 0 0 110px 0
 
 .numbers__holder
   display: flex
@@ -67,9 +107,13 @@
   width: 100%
   justify-content: space-between
 
+
 .numbersContainer
-  width: 35%
-  margin: 0 0 65px 0
+  margin: 0 0 15px 0
+  width: 40%
+  @include large
+
+    margin: 0 0 65px 0
 
 .number
   font-weight: 700
@@ -84,12 +128,22 @@
   font-weight: light
 
 .numbers__img
-  width: 45vw
-  display: flex
-  justify-content: center
-  align-items: center
+  position: absolute
+  opacity: .3
+  top: 200px
+  right: 0
+  z-index: 0
+  @include large
+    position: initial
+    width: 45vw
+    display: flex
+    opacity: 1
+    justify-content: center
+    align-items: center
 
 .numbers--img
-  height: 315px
+  height: 210px
+  @include large
+    height: 315px
 
 
