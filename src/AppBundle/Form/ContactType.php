@@ -76,9 +76,9 @@ class ContactType extends AbstractType
                 ]
             ])
             ->add('message', TextareaType::class, [
-                'label' => 'Votre Message (optionnel)',
+                'label' => 'Votre message',
                 'label_attr' => [
-                    'class' => 'form__label'
+                    'class' => 'form__label optional'
                 ],
                 'attr' => [
                     'placeholder' => 'votre message',
