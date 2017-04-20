@@ -11,8 +11,8 @@ parameters:
     #database_path: '%kernel.root_dir%/../var/data/data.sqlite'
 
     mailer_transport: gmail
-    mailer_user: "%SYMFONY_MAILER_USER%"
-    mailer_password: "%SYMFONY_MAILER_PASSWORD"
+    symfony_mailer_user: "%SYMFONY_MAILER_USER%"
+    symfony_mailer_password: "%SYMFONY_MAILER_PASSWORD"
 
 
     # A secret key that's used to generate certain security-related tokens
