@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Partner;
+use AppBundle\Form\PartnerType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
@@ -10,21 +11,20 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Partner controller.
  *
- * @Route("partner")
  */
 class PartnerController extends Controller
 {
     /**
      * Lists all partner entities.
      *
-     * @Route("/", name="partner_index")
+     * @Route("admin/partner/", name="partner_index")
      * @Method("GET")
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
-        $partners = $em->getRepository('AppBundle:Partner')->findAll();
+        $partners = $em->getRepository('AppBundle:Partner')->findBy([], ['rank' => 'ASC']);
 
         return $this->render('admin/partner/index.html.twig', array(
             'partners' => $partners,
@@ -34,7 +34,7 @@ class PartnerController extends Controller
     /**
      * Creates a new partner entity.
      *
-     * @Route("/new", name="partner_new")
+     * @Route("admin/partner/new", name="partner_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
@@ -47,8 +47,8 @@ class PartnerController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($partner);
             $em->flush();
-
-            return $this->redirectToRoute('partner_show', array('id' => $partner->getId()));
+            $this->addFlash('success', 'Le partenaire a bien été crée.');
+            return $this->redirectToRoute('partner_index');
         }
 
         return $this->render('admin/partner/new.html.twig', array(
@@ -60,7 +60,7 @@ class PartnerController extends Controller
     /**
      * Finds and displays a partner entity.
      *
-     * @Route("/{id}", name="partner_show")
+     * @Route("admin/partner/{id}", name="partner_show")
      * @Method("GET")
      */
     public function showAction(Partner $partner)
@@ -76,24 +76,24 @@ class PartnerController extends Controller
     /**
      * Displays a form to edit an existing partner entity.
      *
-     * @Route("/{id}/edit", name="partner_edit")
+     * @Route("admin/partner/{id}/edit", name="partner_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Partner $partner)
     {
         $deleteForm = $this->createDeleteForm($partner);
-        $editForm = $this->createForm('AppBundle\Form\PartnerType', $partner);
+        $editForm = $this->createForm(PartnerType::class, $partner);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('partner_edit', array('id' => $partner->getId()));
+            $this->addFlash('success', 'Le partenaire a bien été édité.');
+            return $this->redirectToRoute('partner_index');
         }
 
         return $this->render('admin/partner/edit.html.twig', array(
             'partner' => $partner,
-            'edit_form' => $editForm->createView(),
+            'form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
@@ -101,7 +101,7 @@ class PartnerController extends Controller
     /**
      * Deletes a partner entity.
      *
-     * @Route("/{id}", name="partner_delete")
+     * @Route("admin/partner/{id}/delete", name="partner_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Partner $partner)

@@ -68,6 +68,12 @@ class Partner
     private $alt;
 
     /**
+     * @ORM\Column(name="visible", type="boolean")
+     * @var boolean
+     */
+    private $visible;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="rank", type="integer", unique=true)
@@ -233,5 +239,23 @@ class Partner
     {
         return $this->logoName;
     }
+
+    /**
+     * @return mixed
+     */
+    public function isVisible()
+    {
+        return $this->visible;
+    }
+
+    /**
+     * @param mixed $visible
+     */
+    public function setVisible($visible)
+    {
+        $this->visible = $visible;
+    }
+
+
 }
 
