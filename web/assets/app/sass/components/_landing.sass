@@ -17,7 +17,7 @@
 .section_img
   position: absolute
   top: 115px
-  left: 30%
+  left: 50%
   z-index: -1
   @include large
     position: initial
@@ -25,8 +25,11 @@
     width: 38vw
 
 .landing__img
+  position: relative
+  left: -50%
   height: 225px
   @include large
+    position: initial
     height: 435px
 
 .landing__text--holder
@@ -135,6 +138,7 @@
     position: initial
     width: 45vw
     display: flex
+    opacity: 1
     justify-content: center
     align-items: center
 
