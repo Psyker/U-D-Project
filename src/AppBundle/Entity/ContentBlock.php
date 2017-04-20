@@ -33,6 +33,12 @@ class ContentBlock
      * @var TextBlock
      */
     private $textBlocks;
+
+    /**
+     * @ORM\Column(name="position", type="integer")
+     * @var integer
+     */
+    private $position;
     
 
     /**
@@ -83,6 +89,22 @@ class ContentBlock
     public function setTextBlocks(TextBlock $textBlocks)
     {
         $this->textBlocks = $textBlocks;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPosition(): int
+    {
+        return $this->position;
+    }
+
+    /**
+     * @param int $position
+     */
+    public function setPosition(int $position)
+    {
+        $this->position = $position;
     }
 
 }

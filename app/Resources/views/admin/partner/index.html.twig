@@ -9,7 +9,7 @@
     {% for partner in partners %}
         <div class="card col-5 inline-block col-sm-12 col-md-12">
             <div class="card-image">
-                <img alt="{{ partner.alt }}" src="{{ asset('assets/app/img/uploads/partner/' ~ partner.logoName) }}" style="height: 200px; width: 100%;" class="img-fit-cover" />
+                <img alt="{{ partner.alt }}" src="{{ asset('assets/app/img/uploads/partner/' ~ partner.logoName) }}" style="height: 200px; width: 100%;" class="img-fit-contain" />
             </div>
             <div class="card-header">
                 <h4 class="card-title">{{ partner.name }}</h4>
