@@ -15,7 +15,7 @@
   @include x-large
     width: 1280px
     max-width: 1280px
-    padding: 80px 0
+    padding: 80px 20px
     margin: auto
 
 
@@ -51,10 +51,9 @@
 
 
 
-////////////////////////
-//// section contact ///
-////////////////////////
-
+///////////////////////////
+//// section partenaire ///
+///////////////////////////
 .section__partenaire
   .section__content
     position: relative
@@ -69,3 +68,71 @@
     right: 0
     @include medium
       position: relative
+
+///////////////////////////
+////     section jobs   ///
+///////////////////////////
+
+.section__jobs
+  background: $gray-base
+  .section__container
+    padding: 60px 20px
+    @include medium
+      padding: 120px 50px 80px 50px
+    @include large
+      padding: 160px 10% 80px 10%
+    @include x-large
+      padding: 160px 20px 80px 20px
+  .section__content
+    display: block
+    background: #fcfcfc
+    position: relative
+    box-shadow: 2.6px 4.2px 5px 0 rgba(0, 14, 21, 0.09)
+    padding: 4.38rem 20px
+    margin: 0
+    @include medium
+      padding: 4.38rem 5%
+      margin: 0 0 -200px 0
+    @include large
+      padding: 4.38rem 10%
+  .categories
+    display: flex
+    justify-content: space-between
+    flex-direction: column
+    @include medium
+      flex-direction: row
+  .category
+    width: 100%
+    & + .category
+      margin: 1.875rem 0 0 0
+    @include medium
+      width: 25%
+      & + .category
+        margin: 0
+    &:hover
+      .category__illustration
+        transform: rotateZ(90deg)
+        transition: transform 0.4s cubic-bezier(0.4, 0.0, 0.2, 1)
+  .category__illustration
+    content: ' '
+    background: $brand-primary
+    width: 20px
+    height: 20px
+    margin: 0 0 2.125rem 0
+    transition: transform 0.2s cubic-bezier(0.4, 0.0, 0.2, 1)
+    padding: 10px
+  .category__title
+    font-weight: 500
+  .category__desccription
+    padding: 1.25rem 0 0 0
+  .section__description
+    border-top: 1px solid $gray-light
+    padding: 2.74rem 0 0 0
+    margin: 2.74rem 0 0 0
+  .description__paragraph
+    margin: 1.875rem 0 0 0
+
+
+
+.section__jobs + section
+  padding: 200px 0 0 0
