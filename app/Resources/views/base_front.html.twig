@@ -14,7 +14,7 @@
 <body>
 <div class="container">
     <div class="brandNav">
-        <a title="home" href="#" alt="logo U&D" class="brandLogo"><img class="brandLogo__image" src="{{ asset('assets/app/img/pictos/logo-home.svg') }}" alt="U&D"></a>
+        <a title="home" href="#" alt="logo U&D" class="brandLogo" id="brandLogo__image"><img class="brandLogo__image" src="{{ asset('assets/app/img/pictos/logo-home.svg') }}"></a>
     </div>
 
     <header class="section__landing">
@@ -39,13 +39,14 @@
         </div>
         <nav class="navSticky">
             <div class="navSticky__tab">
-                <a title="découvrir plus" class="navSticky__tabLink h6 js-smoothScroll" href="#section__jobs">
+                <a class="navSticky__tabLink h6 js-smoothScroll" href="#section__statistics">
                     <img src="{{ asset('assets/dist/img/arrow_down_stripe.svg') }}" alt="flèche vers le bas" class="navSticky__iconDesktop">
                     <span class="navSticky__label">Allez vers le bas pour découvrir U&D</span>
                 </a>
+                <a href="#brandLogo__image" alt="logo U&D" class="navSticky__scrollTop"><img class="brandLogo__image" src="{{ asset('assets/app/img/pictos/logo-home.svg') }}" alt=""></a>
             </div>
             <div class="navSticky__tab">
-                <a title="Chiffres clés" class="navSticky__tabLink h6 js-smoothScroll" href="#numbers">
+                <a title="Chiffres clés" class="navSticky__tabLink h6 js-smoothScroll" href="#section__statistics">
                     <span class="navSticky__iconMobile">
                         <img src="{{ asset('assets/dist/img/Stat.svg') }}" alt="flèche vers le bas" class="navSticky__icon">
                     </span>
@@ -53,7 +54,7 @@
                 </a>
             </div>
             <div class="navSticky__tab">
-                <a title="Nos métiers" class="navSticky__tabLink h6 js-smoothScroll" href="#job">
+                <a title="Nos métiers" class="navSticky__tabLink h6 js-smoothScroll" href="#section__jobs">
                     <span class="navSticky__iconMobile">
                         <img src="{{ asset('assets/dist/img/Work.svg') }}" alt="flèche vers le bas" class="navSticky__icon">
                     </span>
@@ -61,7 +62,7 @@
                 </a>
             </div>
             <div class="navSticky__tab">
-                <a title="Réseau partenaire" class="navSticky__tabLink h6 js-smoothScroll" href="#partner">
+                <a title="Réseau partenaire" class="navSticky__tabLink h6 js-smoothScroll" href="#section__partenaire">
                     <span class="navSticky__iconMobile">
                         <img src="{{ asset('assets/dist/img/People.svg') }}" alt="flèche vers le bas" class="navSticky__icon">
                     </span>
@@ -69,7 +70,7 @@
                 </a>
             </div>
             <div class="navSticky__tab">
-                <a title="contact" class="navSticky__tabLink h6 js-smoothScroll" href="#contact">
+                <a title="contact" class="navSticky__tabLink h6 js-smoothScroll" href="#section__contact">
                     <span class="navSticky__iconMobile">
                         <img src="{{ asset('assets/dist/img/Email.svg') }}" alt="flèche vers le bas" class="navSticky__icon">
                     </span>
@@ -79,7 +80,7 @@
         </nav>
     </header>
 
-    <section class="section__statistics" id="numbers">
+    <section class="section__statistics" id="section__statistics">
         <div class="section__numbers section__container">
             <div class="numbers__text">
                 <h2 class="numbers__title">A Visual Type Scale better <span class="strong-word">than</span> me</h2>

@@ -29,16 +29,26 @@
     bottom: auto
     left: 0
     right: 0
-  .btn
+  .navSticky__scrollTop
+    display: block
+  .navSticky__tab:nth-child(1) .navSticky__tabLink
+    display: none
 
-
+.navSticky__scrollTop
+  display: none
+  height: 100%
+  max-height: 60px
+  padding: 10px 0
+  img
+    max-height: 40px
+    height: 40px
 
 .navSticky__tab
   width: 40%
   text-align: center
-
   &:nth-child(1)
-    display: none
+    display: block
+    position: relative
     text-align: left
     .navSticky__label
       width: auto
@@ -65,6 +75,13 @@
         left: 0
         margin: -10px 0 0 0
 
+.navSticky__Contact
+  @include medium
+    margin: 10px 0
+    transition: background 0.3s cubic-bezier(0.4, 0.0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0.0, 0.2, 1)
+    &.btn__base
+      span + span
+        margin: 0
 
 .navSticky__tabLink
   width: 100%
