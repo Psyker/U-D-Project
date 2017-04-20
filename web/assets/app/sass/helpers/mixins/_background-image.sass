@@ -1,4 +1,4 @@
 @mixin background-image($imgPath, $size: cover, $repeat: no-repeat)
-  background-image: url('https://s3.eu-west-2.amazonaws.com/repairecafe/' + $imgPath)
+  background-image: url($imgPath)
   background-size: $size
   background-repeat: $repeat
