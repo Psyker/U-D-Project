@@ -117,22 +117,95 @@
       animation: fade-in-up 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) forwards
 
 
+////////////////////////
+//// section numbers ///
+////////////////////////
+.section__statistics
+  background: white
+  position: relative
+  .numbers__text
+    width: 100%
+    @include medium
+      width: 60%
+    @include large
+      width: 50%
+  .container__image
+    width: 55%
+    position: absolute
+    top: 50%
+    right: 20px
+    margin: -25% 0 0 0
+    z-index: 0
+    @include medium
+      width: 40%
+      position: relative
+      top: auto
+      right: auto
+      margin: 0
+      
+  .section__numbers
+    display: flex
 
+  .numbers__text
+    position: relative
+    z-index: 1
+    width: 100%
+    display: block
+    @include large
+      width: 45vw
+      display: flex
+      flex-direction: column
+      justify-content: space-around
+
+  .numbers__title
+    width: 100%
+    margin: 0 0 75px 0
+    @include font-size(1.6875rem)
+    @include medium
+      width: 30vw
+    @include large
+      margin: 0 0 110px 0
+
+  .numbers__holder
+    display: flex
+    flex-flow: row wrap
+    max-width: 490px
+    width: 100%
+    justify-content: space-between
+
+
+  .numbersContainer
+    margin: 0 0 15px 0
+    width: 40%
+    @include large
+
+      margin: 0 0 65px 0
+
+  .number
+    font-weight: 700
+    color: $grey
+    padding: 0 0 25px 0
+    display: block
+
+  .number__description
+    color: $grey
+    font-size: 0.667rem
+    font-family: 'Open Sans', sans-serif
+    font-weight: light
 
 
 ////////////////////////
 //// section contact ///
 ////////////////////////
-
 .section__contact
   background: white
   .section__content
     align-items: center
+    justify-content: space-between
   .container__image
-    width: 50%
-    max-width: 50%
+    width: 40%
+    max-width: 40%
     display: none
-    padding: 0 40px
     opacity: 0
     @include medium
       display: block
@@ -171,6 +244,8 @@
     @include x-large
       width: 50%
       margin: -100px 0 0 10%
+
+
 
 ///////////////////////////
 ////     section jobs   ///
