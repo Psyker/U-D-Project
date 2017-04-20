@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+    {#<link rel="stylesheet" href="https://d2bmpzuwfx796e.cloudfront.net/css/style.min.css.gz">#}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/dist/css/style.min.css') }}">
+
+</head>
+<body>
+<div class="container">
+    <div class="brandNav">
+        <a title="home" href="#" alt="logo U&D" class="brandLogo" id="brandLogo__image"><img class="brandLogo__image" src="{{ asset('assets/app/img/pictos/logo-home.svg') }}"></a>
+    </div>
+
+    <header class="section__landing">
+        <div class="section__container">
+            <div class="section__content">
+                <div class="section__header">
+                    <h1 class="section__title">{{ contentBlocks.0.textBlocks.0.title }}<span class="text-branding">.</span></h1>
+                    <h2 class="h5 section__subtitle">
+                        {{ contentBlocks.0.textBlocks.0.content }}
+                    </h2>
+                    <a title="contactez-nous" class="btn btn__primary section__landingButton js-smoothScroll" href="#contact">
+                        <span>Contactez-nous facilement</span>
+                        <span><img src="{{ asset('assets/dist/img/arrow_right.svg') }}" alt="flèche vers la droite" class="btn__icon"></span>
+                    </a>
+                </div>
+
+                <div class="container__image inner-shadow">
+                    <img src="{{ asset('assets/dist/img/Compo2.png') }}" alt="Logo de partenaire Cat" class="avatar__img">
+                </div>
+            </div>
+        </div>
+        <nav class="navSticky">
+            <div class="navSticky__tab">
+                <a class="navSticky__tabLink h6 js-smoothScroll" href="#section__statistics">
+                    <img src="{{ asset('assets/dist/img/arrow_down_stripe.svg') }}" alt="flèche vers le bas" class="navSticky__iconDesktop">
+                    <span class="navSticky__label">Allez vers le bas pour découvrir U&D</span>
+                </a>
+                <a href="#brandLogo__image" alt="logo U&D" class="navSticky__scrollTop"><img class="brandLogo__image" src="{{ asset('assets/app/img/pictos/logo-home.svg') }}" alt=""></a>
+            </div>
+            <div class="navSticky__tab">
+                <a title="Chiffres clés" class="navSticky__tabLink h6 js-smoothScroll" href="#section__statistics">
+                    <span class="navSticky__iconMobile">
+                        <img src="{{ asset('assets/dist/img/Stat.svg') }}" alt="flèche vers le bas" class="navSticky__icon">
+                    </span>
+                    <span class="navSticky__label">Chiffres clés</span>
+                </a>
+            </div>
+            <div class="navSticky__tab">
+                <a title="Nos métiers" class="navSticky__tabLink h6 js-smoothScroll" href="#section__jobs">
+                    <span class="navSticky__iconMobile">
+                        <img src="{{ asset('assets/dist/img/Work.svg') }}" alt="flèche vers le bas" class="navSticky__icon">
+                    </span>
+                    <span class="navSticky__label">Nos métiers</span>
+                </a>
+            </div>
+            <div class="navSticky__tab">
+                <a title="Réseau partenaire" class="navSticky__tabLink h6 js-smoothScroll" href="#section__partenaire">
+                    <span class="navSticky__iconMobile">
+                        <img src="{{ asset('assets/dist/img/People.svg') }}" alt="flèche vers le bas" class="navSticky__icon">
+                    </span>
+                    <span class="navSticky__label">Réseau partenaire</span>
+                </a>
+            </div>
+            <div class="navSticky__tab">
+                <a title="contact" class="navSticky__tabLink h6 js-smoothScroll navSticky__Contact btn" href="#section__contact">
+                    <span class="navSticky__iconMobile">
+                        <img src="{{ asset('assets/dist/img/Email.svg') }}" alt="flèche vers le bas" class="navSticky__icon">
+                    </span>
+                    <span class="navSticky__label">Rentrons en contact</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="section__statistics" id="section__statistics">
+        <div class="section__numbers section__container">
+            <div class="numbers__text">
+                <h2 class="section__title">{{ contentBlocks.1.textBlocks.0.title }}</h2>
+                <div class="numbers__holder">
+                    <div class="numbersContainer">
+                        <span data-number="{{ contentBlocks.1.textBlocks.1.title }}" class="number h2">
+                            0
+                        </span>
+                        <p class="number__description">{{ contentBlocks.1.textBlocks.1.content }}</p>
+                    </div>
+                    <div class="numbersContainer">
+                        <span data-number="{{ contentBlocks.1.textBlocks.2.title }}" class="number h2">
+                            0
+                        </span>
+                        <p class="number__description">{{ contentBlocks.1.textBlocks.2.content }}</p>
+                    </div>
+                    <div class="numbersContainer">
+                        <span data-number="{{ contentBlocks.1.textBlocks.3.title }}" class="number h2">
+                            0
+                        </span>
+                        <p class="number__description">{{ contentBlocks.1.textBlocks.3.content }}</p>
+                    </div>
+                    <div class="numbersContainer">
+                        <span data-number="{{ contentBlocks.1.textBlocks.4.title }}" class="number h2">
+                            0
+                        </span>
+                        <p class="number__description">{{ contentBlocks.1.textBlocks.4.content }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="inner-shadow container__image">
+                <img src="{{ asset('assets/dist/img/Compo3.png') }}" alt="image de bâtiments" class="numbers--img">
+            </div>
+        </div>
+
+    </section>
+    {% block body %}
+    {% endblock %}
+</div>
+{% block javascripts %}{% endblock %}
+
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
+<script defer src="{{ asset('assets/dist/js/bundle.js') }}"></script>
+{#<script src="https://d2bmpzuwfx796e.cloudfront.net/js/bundle.js.gz"></script>#}
+</body>
+</html>

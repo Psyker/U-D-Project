@@ -1,0 +1,30 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block body %}
+    <h1>Éditer un partenaire</h1>
+
+    {{ form_start(delete_form) }}
+    <input class="btn btn-primary float-right mb-10" type="submit" value="Supprimer">
+    {{ form_end(delete_form) }}
+
+    {{ form_start(form, {'attr': { 'class': 'form-group'}}) }}
+        {{ form_label(form.name, null, {'label_attr': { 'class': 'form-label'} }) }}
+        {{ form_widget(form.name) }}
+        {{ form_label(form.logoFile, null, {'label_attr': { 'class': 'form-label'} }) }}
+        {{ form_widget(form.logoFile) }}
+        {{ form_label(form.alt, null, {'label_attr': { 'class': 'form-label'} }) }}
+        {{ form_widget(form.alt) }}
+        {{ form_label(form.url, null, {'label_attr': { 'class': 'form-label'} }) }}
+        {{ form_widget(form.url) }}
+
+        {{ form_label(form.rank, null, {'label_attr': { 'class': 'form-label'} }) }}
+        {{ form_widget(form.rank) }}
+        <input class="btn btn-primary mt-10" type="submit" value="Editer">
+    {{ form_end(form) }}
+
+
+
+
+
+
+{% endblock %}

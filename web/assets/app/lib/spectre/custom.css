@@ -1,0 +1,35 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    color: #203640;
+}
+
+h1, h2, h3, h4, h5, label {
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav .nav-item a:hover, .nav .nav-item.active a:hover {
+    color: #203640;
+}
+
+.btn {
+    box-sizing: border-box;
+    height: 38px;
+    padding: 10px;
+    border-color: #ffb800 ;
+    color: #ffb800;
+}
+.btn:hover, .btn.btn-primary:hover {
+    background-color: #ffd315;
+    border-color: #ffd315;
+}
+
+.btn.btn-primary {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.container-marging {
+    margin-top: 50px;
+    margin-left: 50px;
+}

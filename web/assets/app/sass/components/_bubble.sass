@@ -1,0 +1,43 @@
+.containerBubbles
+  position: relative
+
+  height: 500px
+
+  .bubble
+    position: absolute
+    top: 50%
+    left: 50%
+    opacity: 0
+    background: white
+    box-shadow: 1.1px 1.7px 9px 0 rgba(0, 14, 21, 0.09)
+    &:nth-child(1)
+      @include avatar(144px, 0, 8px)
+      border-radius: 144px
+    &:nth-child(2)
+      @include avatar(122px, 0, 8px)
+    &:nth-child(3)
+      @include avatar(107px, 0, 8px)
+    &:nth-child(4),
+    &:nth-child(5)
+      @include avatar(90px, 0, 8px)
+    &:nth-child(6)
+      @include avatar(74px, 0, 8px)
+
+
+  &.active
+    .bubble
+      &:nth-child(1)
+        animation: animateBubbleCenterRight 1s ease-out forwards, animateBubbleRound 18s ease-in-out infinite 1.1s
+      &:nth-child(2)
+        animation: animateBubbleTopRight 1s ease-out 0.2s forwards, animateBubbleRound 13s ease-in-out infinite 1.3s
+      &:nth-child(3)
+        animation: animateBubbleBottomRight 1s ease-out 0.6s forwards, animateBubbleRound 17s ease-out infinite 1.5s
+      &:nth-child(4)
+        animation: animateBubbleBottom 1s ease-out 0.7s forwards, animateBubbleRound 10s ease-in infinite 1.7s
+      &:nth-child(5)
+        animation: animateBubbleBottomLeft 1s ease-out 1s forwards, animateBubbleRound 15s ease-out infinite 1.9s
+      &:nth-child(6)
+        animation: animateBubbleTopLeft 1s ease-out 1.1s forwards, animateBubbleRound 11s ease-in-out infinite 2.1s
+
+
+

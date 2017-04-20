@@ -4,6 +4,13 @@ parameters:
     #parameter_name: value
 
 services:
-    #service_name:
-    #    class: AppBundle\Directory\ClassName
-    #    arguments: ['@another_service_name', 'plain_value', '%parameter_name%']
+    content_block_service:
+        class: AppBundle\Services\ContentBlockService
+        arguments: ["@doctrine.orm.entity_manager"]
+
+    contact_form_type:
+        class: AppBundle\Form\ContactType
+        arguments: ["@mailer", "@twig", "@session"]
+        tags:
+          - { name: form.type }
+

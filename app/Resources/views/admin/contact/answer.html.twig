@@ -1,0 +1,14 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block body %}
+    <h1>Répondre au message</h1>
+
+    {{ form_start(form, {'attr': { 'class': 'form-group'}}) }}
+        {{ form_label(form.subject, null, {'label_attr': { 'class': 'form-label'} }) }}
+        {{ form_widget(form.subject) }}
+        {{ form_label(form.message, null, {'label_attr': { 'class': 'form-label'} }) }}
+        {{ form_widget(form.message) }}
+        <input class="btn btn-primary mt-10"  type="submit" value="Envoyer" />
+    {{ form_end(form) }}
+{% endblock %}
+

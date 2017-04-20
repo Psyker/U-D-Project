@@ -1,0 +1,83 @@
+.swiper-container
+  max-height: 300px
+  background: white
+  border: 1px solid $gray-light
+  box-shadow: 5px 5px 20px $gray-light
+  padding: 0 0 0 80px
+
+
+.swiper-slide
+  //border-top: 1px solid gray
+  padding: 40px 20px
+  display: flex
+  align-items: center
+
+.container-swiper-buttons
+  width: 80px
+  height: 100%
+  top: 0
+  position: absolute
+  left: 0
+  border-right: 1px solid $gray-light
+
+.swiper-button-prev,
+.swiper-button-next
+  width: 44px
+  position: absolute
+  left: 50%
+  top: 50%
+  margin-left: -40px
+  margin-top: -80px
+  padding: 100% 50%
+
+
+.swiper-button-prev
+  background-image: url('../img/arrow-up.svg')
+
+.swiper-button-next
+  background-image: url('../img/arrow-down.svg')
+
+.container-swiper-button-top,
+.container-swiper-button-bottom
+  position: relative
+  height: 50%
+  overflow: hidden
+
+.container-swiper-button-bottom
+  &:after
+    content: ' '
+    background-color: #f5F5F5
+    width: 200%
+    height: 100%
+    border-radius: 50% 50% 0 0
+    position: absolute
+    top: 100%
+    left: -50%
+    transition: transform 0.2s cubic-bezier(0.4, 0.0, 0.2, 1)
+  &:hover
+    &:after
+      transform: translateY(-100%)
+      transition: transform 0.4s cubic-bezier(0.4, 0.0, 0.2, 1)
+
+
+.container-swiper-button-top
+  &:after
+    content: ' '
+    background-color: #f5F5F5
+    width: 200%
+    height: 100%
+    border-radius: 0 0 50% 50%
+    position: absolute
+    top: -100%
+    left: -50%
+    transition: transform 0.2s cubic-bezier(0.4, 0.0, 0.2, 1)
+  &:hover
+    &:after
+      transform: translateY(100%)
+      transition: transform 0.4s cubic-bezier(0.4, 0.0, 0.2, 1)
+
+.slide__description
+  margin: 0 0 2.38rem 0
+.slide__title
+  font-weight: 800
+

@@ -1,0 +1,141 @@
+{% extends 'base_front.html.twig' %}
+
+{% block body %}
+
+    <section class="section__jobs" id="section__jobs">
+        <div class="section__container">
+            <h2 class="h3 section__title color-white">{{ contentBlocks.2.textBlocks.0.title }}</h2>
+        </div>
+        <div class="section__content">
+            <div class="categories">
+                <div class="category">
+                    <div class="category__illustration">
+                        <img src="{{ asset('assets/dist/img/Business.svg') }}" alt="icon business" class="category__icon">
+                    </div>
+                    <h2 class="category__title h5">{{ contentBlocks.2.textBlocks.1.title }}</h2>
+                    <p class="category__desccription h6">{{ contentBlocks.2.textBlocks.1.content }}
+                    </p>
+                </div>
+                <div class="category">
+                    <div class="category__illustration">
+                        <img src="{{ asset('assets/dist/img/Help.svg') }}" alt="icon business" class="category__icon">
+                    </div>
+                    <h2 class="category__title h5">{{ contentBlocks.2.textBlocks.2.title }}</h2>
+                    <p class="category__desccription h6">{{ contentBlocks.2.textBlocks.2.content }}
+                    </p>
+                </div>
+                <div class="category">
+                    <div class="category__illustration">
+                        <img src="{{ asset('assets/dist/img/Cles.svg') }}" alt="icon business" class="category__icon">
+                    </div>
+                    <h2 class="category__title h5">{{ contentBlocks.2.textBlocks.3.title }}</h2>
+                    <p class="category__desccription h6">{{ contentBlocks.2.textBlocks.3.content }}
+                    </p>
+                </div>
+            </div>
+            <div class="section__description">
+                <h3 class="h4 description__title">{{ contentBlocks.2.textBlocks.4.title }}</h3>
+                <p class="description__paragraph h6">{{ contentBlocks.2.textBlocks.4.content }}
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section__partenaire" id="section__partenaire">
+        <div class="section__container">
+            <h2 class="h3 section__title">{{ contentBlocks.3.textBlocks.0.title }}</h2>
+            <h4 class="section__subtitle h6">{{ contentBlocks.3.textBlocks.0.content }}
+            </h4>
+            <div class="section__content">
+                <div class="swipe">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            {% for quote in quotes %}
+                            <div class="swiper-slide">
+                                <div class="slide__content">
+                                    <p class="slide__description">{{ quote.text }}
+                                    </p>
+                                    <h3 class="slide__title h5">{{ quote.firstname }} {{ quote.lastname }}</h3>
+                                    <h4 class="slide__subtitle h6">{{ quote.company }}</h4>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                        <!-- If we need navigation buttons -->
+                        <div class="container-swiper-buttons">
+                            <div class="container-swiper-button-top">
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                            <div class="container-swiper-button-bottom">
+                                <div class="swiper-button-next"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="containerBubbles">
+                    {% for partner in partners %}
+                    <div class="bubble">
+                        <a href="{{ partner.url }}" class="bubble__link" target="_blank" title="lien vers le site client">
+                            <div class="avatar__round">
+                                <img src="{{ asset('assets/app/img/uploads/partner/' ~ partner.logoName) }}" alt="{{ partner.alt }}" class="avatar__img">
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section__contact" id="section__contact">
+        <div class="section__container">
+            <h2 class="h3 section__title">Contactez-nous facilement</h2>
+            <div class="section__content">
+                {{ render(controller('AppBundle:Contact:new')) }}
+
+                <div class="container__image inner-shadow">
+                    <img src="{{ asset('assets/dist/img/Compo1.png') }}" alt="Logo de partenaire Cat" class="avatar__img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-left">
+            <p class="cgu">U&D - Tous droits réservés</p>
+            <a href="#" class="legalicy modal__open" title="Cliquer pour voir les mentions légales">Mentions légales</a>
+        </div>
+        <div class="footer-right">
+            <ul class="footer__social">
+                <li class="social__tab"><a class="social__link" href="#"><img class="social__logo" src="{{ asset('assets/dist/img/pictos/linkedin-logo.svg') }}" alt=""></a></li>
+                <li class="social__tab"><a class="social__link" href="#"><img class="social__logo" src="{{ asset('assets/dist/img/pictos/facebook-logo.svg') }}" alt=""></a></li>
+                <li class="social__tab"><a class="social__link" href="#"><img class="social__logo" src="{{ asset('assets/dist/img/pictos/twitter-logo.svg') }}" alt=""></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <div id="modal" class="modal">
+        <div class="modal__content">
+            <div class="modal__tools">
+                <button class="modal__tool modal__close" type="button">
+                </button>
+            </div>
+            <div class="modal__details">
+                <div class="modal__header">
+                    <h3 class="h2 modal__title">{{ contentBlocks.5.textBlocks.0.title }}</h3>
+                </div>
+                <div class="modal__body">
+                    <div class="modal__initContent">
+                        <div class="modal__section">
+                            <p>{{ contentBlocks.5.textBlocks.0.content }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lightbox"></div>
+{% endblock %}

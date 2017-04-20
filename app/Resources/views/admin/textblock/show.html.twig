@@ -1,0 +1,25 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block body %}
+    <h1>Contenu texte</h1>
+
+    <h3>Section : {{ textblock.name }}</h3>
+
+    {{ form_start(delete_form) }}
+    <input class="btn btn-default float-right mb-10" type="submit" value="Supprimer">
+    {{ form_end(delete_form) }}
+
+    {{ form_start(form, {'attr': { 'class': 'form-group'}}) }}
+    <input name="_csrf_token" value="{{ csrf_token('form') }}" type="hidden">
+        {{ form_label(form.name, null, {'label_attr': { 'class': 'form-label'} }) }}
+        {{ form_widget(form.name) }}
+        {{ form_label(form.content, null, {'label_attr': { 'class': 'form-label'} }) }}
+        {{ form_widget(form.content) }}
+        {{ form_label(form.title, null, {'label_attr': { 'class': 'form-label'} }) }}
+        {{ form_widget(form.title) }}
+        {{ form_label(form.position, null, {'label_attr': { 'class': 'form-label'} }) }}
+        {{ form_widget(form.position) }}
+    <input class="btn btn-primary mt-10" type="submit" value="Editer">
+    {{ form_end(form) }}
+
+{% endblock %}

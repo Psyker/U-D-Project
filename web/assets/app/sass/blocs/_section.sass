@@ -1,0 +1,335 @@
+.section
+  display: flex
+  justify-content: space-between
+
+.section-img
+  height: 27rem
+
+.section__container
+  padding: 80px 20px
+  @include medium
+    padding: 80px 50px
+  @include large
+    padding: 80px 10%
+  @include x-large
+    width: 1280px
+    max-width: 1280px
+    padding: 80px 20px
+    margin: auto
+
+
+.section__title
+  position: relative
+  padding: 0 0 1.5rem 0
+  &:after
+    content: ' '
+    height: 3px
+    width: 54px
+    background: $brand-primary
+    position: absolute
+    bottom: 0
+    left: 0
+
+.section__subtitle
+  width: 100%
+  margin: 3.4rem 0 0 0
+  @include medium
+    width: 50%
+
+.section__content
+  display: flex
+  margin: 3.75rem 0 0 0
+
+.container__image
+  img
+    width: 100%
+    max-width: 100%
+
+////////////////////////
+//// section landing ///
+////////////////////////
+.section__landing
+  height: 100vh
+  position: relative
+  .section__container
+    height: 100%
+    padding: 20px
+    @include medium
+      padding: 80px
+    @include x-large
+      width: 100%
+      max-width: 100%
+  .section__content
+    height: 100%
+    display: block
+    position: relative
+    margin: 0
+    @include medium
+      display: flex
+      align-items: center
+  .section__header
+    position: relative
+    text-align: center
+    padding: 40vh 0 0 0
+    z-index: 2
+    @include medium
+      text-align: left
+      padding: 0
+      width: 60%
+  .section__title
+    @include font-size(1.6rem)
+    padding: 0 0 1.6rem 0
+    @include medium
+      @include font-size(2rem)
+    @include large
+      @include font-size(3.375rem)
+
+    &:after
+      content: none
+  .section__subtitle
+    @include font-size(0.75rem)
+    @include medium
+      @include font-size(1rem)
+    margin: 0
+  .section__landingButton
+    margin: 3.75rem 0 0 0
+    @include medium
+      margin: 5rem 0 0 0
+  .container__image
+    width: 100%
+    position: absolute
+    top: 30vh
+    left: 0
+    opacity: 0
+    z-index: 0
+    @include medium
+      width: 40%
+      max-width: 40%
+      top: 100px
+      position: relative
+
+  .inner-shadow
+    &:after
+      height: 400px
+      background: linear-gradient(transparent, $gray)
+  &.active
+    .container__image
+      animation: fade-in-up 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) forwards
+
+
+////////////////////////
+//// section numbers ///
+////////////////////////
+.section__statistics
+  background: white
+  position: relative
+  .numbers__text
+    width: 100%
+    @include medium
+      width: 60%
+    @include large
+      width: 50%
+  .container__image
+    width: 55%
+    position: absolute
+    top: 50%
+    right: 20px
+    margin: -25% 0 0 0
+    z-index: 0
+    @include medium
+      width: 40%
+      position: relative
+      top: auto
+      right: auto
+      margin: 0
+
+  .section__numbers
+    display: flex
+
+  .numbers__text
+    position: relative
+    z-index: 1
+    width: 100%
+    display: block
+    @include large
+      width: 45vw
+      display: flex
+      flex-direction: column
+      justify-content: space-around
+
+  .numbers__title
+    width: 100%
+    margin: 0 0 75px 0
+    @include font-size(1.6875rem)
+    @include medium
+      width: 30vw
+    @include large
+      margin: 0 0 110px 0
+
+  .numbers__holder
+    display: flex
+    flex-flow: row wrap
+    max-width: 490px
+    width: 100%
+    justify-content: space-between
+
+
+  .numbersContainer
+    margin: 0 0 15px 0
+    width: 40%
+    @include large
+
+      margin: 0 0 65px 0
+
+  .number
+    font-weight: 700
+    color: $grey
+    padding: 0 0 25px 0
+    display: block
+
+  .number__description
+    color: $grey
+    font-size: 0.667rem
+    font-family: 'Open Sans', sans-serif
+    font-weight: light
+
+
+////////////////////////
+//// section contact ///
+////////////////////////
+.section__contact
+  background: white
+  .section__content
+    align-items: center
+    justify-content: space-between
+  .container__image
+    width: 40%
+    max-width: 40%
+    display: none
+    opacity: 0
+    @include medium
+      display: block
+  &.active
+    .container__image
+      animation: fade-in-up 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) forwards
+
+
+
+
+///////////////////////////
+//// section partenaire ///
+///////////////////////////
+.section__partenaire
+  .section__content
+    flex-direction: column
+    @include large
+      flex-direction: row
+  .swipe
+    order: 2
+    width: 100%
+    @include large
+      width: 50%
+      order: 1
+    @include x-large
+      width: 40%
+
+  .containerBubbles
+    width: 100%
+    order: 1
+    margin: 0 auto 80px 0
+    @include large
+      width: 40%
+      order: 2
+      margin: -100px 0 0 10%
+    @include x-large
+      width: 50%
+      margin: -100px 0 0 10%
+
+
+
+///////////////////////////
+////     section jobs   ///
+///////////////////////////
+
+.section__jobs
+  .section__container
+    @include background-image('../img/bg_black.jpg', cover, repeat)
+    background-position: bottom
+    width: 100%
+    max-width: 100%
+    height: 300px
+    padding: 37.5px 5% 0 5%
+    margin: 0
+    @include medium
+      height: 500px
+      padding: 125px 10% 0 10%
+    @include large
+      height: 600px
+      padding: 150px 15% 0 15%
+  .section__content
+    width: 90%
+    display: block
+    background: #fcfcfc
+    transform: translateY(-150px)
+    box-shadow: 2.6px 4.2px 5px 0 rgba(0, 14, 21, 0.09)
+    padding: 4.38rem 20px
+    margin: 0 auto
+    @include medium
+      width: 80%
+      transform: translateY(-250px)
+      padding: 4.38rem 5%
+      margin: 0 auto
+    @include large
+      width: 70%
+      transform: translateY(-300px)
+      padding: 4.38rem 10%
+      margin: 0 auto
+  .categories
+    display: flex
+    justify-content: space-between
+    flex-direction: column
+    @include medium
+      flex-direction: row
+  .category
+    width: 100%
+    & + .category
+      margin: 1.875rem 0 0 0
+    @include medium
+      width: 25%
+      & + .category
+        margin: 0
+    &:hover
+      .category__illustration .category__icon
+        transform: rotateZ(90deg)
+        transition: transform 0.4s cubic-bezier(0.4, 0.0, 0.2, 1)
+    &:nth-child(1):hover
+      .category__illustration .category__icon
+        transform: rotateZ(-90deg)
+    &:nth-child(2):hover
+      .category__illustration .category__icon
+        transform: rotateZ(360deg)
+
+  .category__illustration
+    margin: 0 0 2.125rem 0
+    padding: 10px
+    .category__icon
+      transition: transform 0.2s cubic-bezier(0.4, 0.0, 0.2, 1)
+
+  .category__title
+    font-weight: 500
+  .category__desccription
+    padding: 1.25rem 0 0 0
+  .section__description
+    border-top: 1px solid $gray-light
+    padding: 2.74rem 0 0 0
+    margin: 2.74rem 0 0 0
+  .description__paragraph
+    margin: 1.875rem 0 0 0
+
+
+.section__jobs + section
+  margin: -150px 0 0 0
+  @include medium
+    margin: -250px 0 0 0
+  @include large
+    margin: -300px 0 0 0

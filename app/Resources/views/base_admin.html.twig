@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Back-Office{% endblock %}</title>
+    {% block stylesheets %}
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Poppins" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('assets/app/lib/spectre/spectre.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/app/lib/spectre/spectre-exp.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/app/lib/spectre/spectre-icons.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/app/lib/spectre/custom.css') }}">
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+</head>
+<body>
+<div class="container"> 
+    <div class="columns">
+        <div class="column col-2" style="padding: 0; height: 150vh; background-color: #f8f9fa;">
+            <div class="panel">
+                <div class="panel-header centered">
+                    <div class="panel-title mt-5"><img src="{{ asset('Logo.png') }}" style="height: 100px; max-width: 100%" alt=""></div>
+                </div>
+            </div>
+            <ul class="nav pt-10 pl-10 pb-10 ml-10" style="">
+                <li class="nav-item">
+                    <a class="text-bold" href="{{ path('admin_index') }}">Tableau de bord</a>
+                </li>
+                <li class="nav-item active">
+                    <a href="#">Contacts</a>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a href="{{ path('contact_inbox_index') }}">Boîte de récéption</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ path('contact_index') }}">Carnet d'appel</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ path('answer_index') }}">Messages envoyés</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="divider"></li>
+                <li class="nav-item active">
+                    <a href="{{ path('quotes_index') }}">Citations</a>
+                </li>
+                <li class="nav-item active">
+                    <a href="#">Contenus</a>
+                    <ul class="nav">
+                        {% for contentBlock in content_block_service.contentBlock %}
+                        <li class="nav-item">
+                            <a href="{{ path('content_block_show', {'id': contentBlock.id}) }}">{{ contentBlock.name }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li class="nav-item active">
+                    <a href="{{ path('partner_index') }}">Partenaires</a>
+                </li>
+                <li class="nav-item" style="position:absolute; bottom: 30px">
+                    <a  href={{ path('homepage') }}><i class="icon icon-arrow-left"></i>&nbsp;Retour au site</a>
+                </li>
+            </ul>
+        </div>
+        <div class="column col-9">
+            {% for type, flashMessages in app.session.flashbag.all() %}
+                {% for flashMessage in flashMessages %}
+                    <div class="toast toast-{{ type }}"
+                         role="alert">
+                        <button type="button" class="btn btn-clear float-right" ></button>
+                        {{ flashMessage|raw }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+            <div class="container container-marging">
+                {% block body %}{% endblock %}
+            </div>
+        </div>
+    </div>
+</div>
+{% block javascripts %}{% endblock %}
+</body>
+</html>

@@ -13,9 +13,14 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
+        $em = $this->getDoctrine()->getManager();
+        $partners = $em->getRepository('AppBundle:Partner')->findAll();
+        $quotes = $em->getRepository('AppBundle:Quotes')->findAll();
+        $contentBlocks = $em->getRepository('AppBundle:ContentBlock')->findBy([], ['id' => 'ASC']);
+        return $this->render('front/default/index.html.twig', [
+            'partners' => $partners,
+            'contentBlocks' => $contentBlocks,
+            'quotes' => $quotes
         ]);
     }
 }

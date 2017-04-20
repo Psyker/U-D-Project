@@ -1,0 +1,43 @@
+.footer
+  position: relative
+  display: flex
+  justify-content: space-between
+  align-items: center
+  min-height: 80px
+  padding: 0 20px
+  @include medium
+    padding: 0 50px
+  @include large
+    padding: 0 80px
+  .cgu,
+  .legalicy
+    padding: 0 10px
+  a.legalicy
+    text-decoration: underline
+    font-weight: 300
+
+
+.footer-left
+  flex-direction: column
+  position: relative
+  &:after
+    content: ""
+    display: block
+    width: 1px
+    height: 40px
+    right: -10px
+    top: 5px
+    background: #ffffff
+    position: absolute
+
+.footer__social
+  display: flex
+  flex-flow: row wrap
+.social__tab
+  width: 25px
+  margin: 0
+  @include medium
+    margin-left: 10px
+
+.social__logo
+  width: 15px

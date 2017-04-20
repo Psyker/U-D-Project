@@ -1,0 +1,30 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block body %}
+
+    <h1>Tableau de bord</h1>
+
+    <h3 class="text-center">Bonjour</h3>
+
+    <div class="empty">
+        <div class="empty-icon">
+            <i class="icon icon-message"></i>
+        </div>
+        <h4 class="empty-title">Vous avez {{ messageCount }} messages</h4>
+        <p class="empty-subtitle">Cliquer sur le bouton pour accéder à votre boîte de récéption</p>
+        <div class="empty-action">
+            <a href="{{ path('contact_inbox_index') }}" class="btn btn-primary">Accéder à la boite de récéption</a>
+        </div>
+    </div>
+    <div class="empty mt-10">
+        <div class="empty-icon">
+            <i class="icon icon-people"></i>
+        </div>
+        <h4 class="empty-title">Vous devez rappeler {{ phoneBackCount }} personnes</h4>
+        <p class="empty-subtitle">Cliquer sur le bouton pour accéder à votre carnet d'appel</p>
+        <div class="empty-action">
+            <a href="{{ path('contact_index') }}" class="btn btn-primary">Accéder à votre carnet d'appel</a>
+        </div>
+    </div>
+
+{% endblock %}
