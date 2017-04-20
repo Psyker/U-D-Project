@@ -1,0 +1,66 @@
+form
+  width: 100%
+  @include medium
+    width: 60%
+  @include large
+    width: 50%
+  #appbundle_contact
+    & > div
+      margin: 2rem 0 0 0
+      &:nth-child(1),
+      &:nth-child(2)
+        width: 50%
+        display: inline-block
+        margin: 0
+      &:nth-child(1)
+        padding: 0 25px 0 0
+      &:last-child
+        display: none
+        opacity: 0
+
+  .form__label,
+  .form__input,
+  .form__textarea,
+  .container__form__input input,
+  .container__form__input select
+    color: $gray-base
+    display: block
+  .form__input,
+  .form__textarea,
+  .container__form__input input,
+  .container__form__input select
+    font-size: 0.8rem
+    width: 100%
+    min-height: 3rem
+    height: 3rem
+    border-radius: 3px
+    border: solid 1px #a3b4bc
+    background: $gray
+    padding: 0 1.1rem
+    margin: 1.125rem 0 0 0
+
+  .form__input,
+  .container__form__input input,
+  .container__form__input select
+    line-height: 3rem
+
+  .container__form__input select
+    width: 25%
+    display: inline-block
+    margin-right: 10px
+    &:nth-child(2)
+      margin-left: 10px
+      margin-right: 0
+  .form__textarea
+    min-height: 9rem
+    height: 9rem
+    resize: none
+    padding: 1rem 1.1rem
+
+  .form__submit
+    float: right
+    border: 0
+    cursor: pointer
+    margin: 4rem 0 0 0
+    &:focus
+      outline: none

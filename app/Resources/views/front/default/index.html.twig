@@ -1,49 +1,175 @@
 {% extends 'base_front.html.twig' %}
 
 {% block body %}
-    {{ render(controller('AppBundle:Contact:new')) }}
 
-    <section class="blocPartenaire">
-        <div class="swiper-container inner-shadow">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="slide__content">
-                        <p class="slide__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab cum
-                            deserunt distinctio, dolore ksjdbs dks dks dks sk dskd s.
+    <section class="section__jobs">
+        <div class="section__container">
+            <div class="section__content">
+                <div class="categories">
+                    <div class="category">
+                        <div class="category__illustration">
+                            <img src="{{ asset('assets/dist/img/Business.svg') }}" alt="icon business" class="category__icon">
+                        </div>
+                        <h2 class="category__title h5">Spécialiste de l'isolation</h2>
+                        <p class="category__desccription h6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                            posuere congue arcu quis elementum. Aliquam a nibh quis massa rhoncus dapibus. Suspendisse
+                            vestibulum, neque et porttitor rutrum, elit lectus sollicitudin orci, vel rhoncus nisi mi vel
+                            ante. Proin tempor lobortis dolor, a blandit sapien aliquet nec.
                         </p>
-                        <h1 class="slide__title">Le nom de la persoone</h1>
-                        <h3 class="slide__subtitle"></h3>
+                    </div>
+                    <div class="category">
+                        <div class="category__illustration">
+                            <img src="{{ asset('assets/dist/img/Help.svg') }}" alt="icon business" class="category__icon">
+                        </div>
+                        <h2 class="category__title h5">Devoir de conseil</h2>
+                        <p class="category__desccription h6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                            posuere congue arcu quis elementum. Aliquam a nibh quis massa rhoncus dapibus. Suspendisse
+                            vestibulum, neque et porttitor rutrum, elit lectus sollicitudin orci, vel rhoncus nisi mi vel
+                            ante. Proin tempor lobortis dolor, a blandit sapien aliquet nec.
+                        </p>
+                    </div>
+                    <div class="category">
+                        <div class="category__illustration">
+                            <img src="{{ asset('assets/dist/img/Cles.svg') }}" alt="icon business" class="category__icon">
+                        </div>
+                        <h2 class="category__title h5">Spécialiste de l'isolation</h2>
+                        <p class="category__desccription h6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                            posuere congue arcu quis elementum. Aliquam a nibh quis massa rhoncus dapibus. Suspendisse
+                            vestibulum, neque et porttitor rutrum, elit lectus sollicitudin orci, vel rhoncus nisi mi vel
+                            ante. Proin tempor lobortis dolor, a blandit sapien aliquet nec.
+                        </p>
                     </div>
                 </div>
-                <div class="swiper-slide">Slide 2</div>
-                <div class="swiper-slide">Slide 3</div>
-                <div class="swiper-slide">Slide 4</div>
-                <div class="swiper-slide">Slide 5</div>
-                <div class="swiper-slide">Slide 6</div>
-                <div class="swiper-slide">Slide 7</div>
-                <div class="swiper-slide">Slide 8</div>
-                <div class="swiper-slide">Slide 9</div>
-                <div class="swiper-slide">Slide 10</div>
-            </div>
+                <div class="section__description">
+                    <h3 class="h4 description__title">L'expertise de notre métier</h3>
+                    <p class="description__paragraph h6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                        posuere congue arcu quis elementum. Aliquam a nibh quis massa rhoncus dapibus. Suspendisse
+                        vestibulum, neque et porttitor rutrum, elit lectus sollicitudin orci, vel rhoncus nisi mi vel
+                        ante. Proin tempor lobortis dolor, a blandit sapien aliquet nec.
+                    </p>
 
-            <!-- If we need navigation buttons -->
-            <div class="container-swiper-buttons">
-                <div class="container-swiper-button-top">
-                    <div class="swiper-button-prev"></div>
                 </div>
-                <div class="container-swiper-button-bottom">
-                    <div class="swiper-button-next"></div>
-                </div>
-            </div>
-        </div>
 
-        <div class="containerBubbles">
-            <div class="bubble"></div>
-            <div class="bubble"></div>
-            <div class="bubble"></div>
-            <div class="bubble"></div>
-            <div class="bubble"></div>
-            <div class="bubble"></div>
+            </div>
         </div>
     </section>
+
+    <section class="section__partenaire">
+        <div class="section__container">
+            <h2 class="h3 section__title">Réseaux partenaires</h2>
+            <h4 class="section__subtitle h6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
+                aperiam beatae consequatur corporis culpa dicta dolorem facilis fugit libero magni minima molestiae
+                obcaecati, officia optio quo quod suscipit, veniam voluptatibus.
+            </h4>
+            <div class="section__content">
+                <div class="swipe">
+                    <div class="swiper-container inner-shadow">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="slide__content">
+                                    <p class="slide__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab cum
+                                        deserunt distinctio, dolore ksjdbs dks dks dks sk dskd s.
+                                    </p>
+                                    <h3 class="slide__title h5">Le nom de la persoone</h3>
+                                    <h4 class="slide__subtitle h6">Directeur de mes couilles</h4>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">Slide 2</div>
+                            <div class="swiper-slide">Slide 3</div>
+                            <div class="swiper-slide">Slide 4</div>
+                            <div class="swiper-slide">Slide 5</div>
+                            <div class="swiper-slide">Slide 6</div>
+                            <div class="swiper-slide">Slide 7</div>
+                            <div class="swiper-slide">Slide 8</div>
+                            <div class="swiper-slide">Slide 9</div>
+                            <div class="swiper-slide">Slide 10</div>
+                        </div>
+
+                        <!-- If we need navigation buttons -->
+                        <div class="container-swiper-buttons">
+                            <div class="container-swiper-button-top">
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                            <div class="container-swiper-button-bottom">
+                                <div class="swiper-button-next"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="containerBubbles">
+                    <div class="bubble avatar">
+                        <div class="avatar__round">
+                            <img src="http://lorempicsum.com/nemo/255/200/2" alt="Logo de partenaires" class="avatar__img">
+                        </div>
+                    </div>
+                    <div class="bubble">
+                        <div class="avatar__round">
+                            <img src="{{ asset('assets/dist/img/cat.jpeg') }}" alt="Logo de partenaire Cat" class="avatar__img">
+                        </div>
+                    </div>
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section__contact">
+        <div class="section__container">
+            <h2 class="h3 section__title">Rentrons en contact</h2>
+            <div class="section__content">
+                {{ render(controller('AppBundle:Contact:new')) }}
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p class="cgu">U&D - Tous droits réservés</p>
+        <a href="#" class="legalicy modal__open" title="Cliquer pour voir les mentions légales">Mentions légales</a>
+    </footer>
+
+
+    <div id="modal" class="modal">
+        <div class="modal__content">
+            <div class="modal__tools">
+                <button class="modal__tool modal__close" type="button">
+                </button>
+            </div>
+            <div class="modal__details">
+                <div class="modal__header">
+                    <h3 class="h2 modal__title">Mentions légales</h3>
+                </div>
+                <div class="modal__body">
+                    <div class="modal__initContent">
+                        <div class="modal__section">
+                            <h4 class="">Lorem <span class="color-primary">Ipsum</span></h4>
+                            <p>Lorem Ipsum dolor sit amet, consectetur adipisicing elit. Animi aperiam eum hic maxime
+                                nesciunt qui sunt? Debitis labore molestiae molestias tempore! A asperiores facere harum
+                                iste odio, repellat repellendus vitae?
+                            </p>
+                        </div>
+                        <div class="modal__section">
+                            <h4 class="">Lorem <span class="color-primary">Ipsum</span></h4>
+                            <p>Lorem Ipsum dolor sit amet, consectetur adipisicing elit. Animi aperiam eum hic maxime
+                                nesciunt qui sunt? Debitis labore molestiae molestias tempore! A asperiores facere harum
+                                iste odio, repellat repellendus vitae?
+                            </p>
+                        </div>
+                        <div class="modal__section">
+                            <h4 class="">Lorem <span class="color-primary">Ipsum</span></h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aperiam eum hic maxime
+                                nesciunt qui sunt? Debitis labore molestiae molestias tempore! A asperiores facere harum
+                                iste odio, repellat repellendus vitae?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lightbox"></div>
 {% endblock %}

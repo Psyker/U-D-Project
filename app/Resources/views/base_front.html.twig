@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <title>{% block title %}Welcome!{% endblock %}</title>
     {% block stylesheets %}{% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
@@ -21,7 +22,10 @@
                     Sed hendrerit suscipit cursus. In lorem leo, vehicula et dictum nec, pellentesque sed orci.
                     Duis quis ullamcorper tortor. Donec non varius elit. Integer id leo semper
                 </p>
-                <a class="landing__cta" href="#contact">Contactez-nous facilement</a>
+                <a class="btn btn__primary" href="#contact">
+                    <span>Contactons-nous facilement</span>
+                    <span><img src="{{ asset('assets/dist/img/arrow_right.svg') }}" alt="flèche vers la droite" class="btn__icon"></span>
+                </a>
             </div>
             <div class="section_img">
                 <img class="section-img landing__img"
@@ -30,12 +34,32 @@
             </div>
         </div>
         <nav class="navSticky">
-            <div class="navSticky__tab"><a class="navSticky__tabLink h6" href="#home">Allez vers le bas pour découvrir
-                    U&D</a></div>
-            <div class="navSticky__tab"><a class="navSticky__tabLink h6" href="#home">Chiffres clés</a></div>
-            <div class="navSticky__tab"><a class="navSticky__tabLink h6" href="#home">Nos métiers</a></div>
-            <div class="navSticky__tab"><a class="navSticky__tabLink h6" href="#home">Réseau partenaire</a></div>
-            <div class="navSticky__tab"><a class="navSticky__tabLink h6" href="#home">Rentrons en contact</a></div>
+            <div class="navSticky__tab">
+                <a class="navSticky__tabLink h6" href="#section__jobs">
+                    <img src="{{ asset('assets/dist/img/arrow_down_stripe.svg') }}" alt="flèche vers le bas" class="navSticky__icon">
+                    <span class="navSticky__label">Allez vers le bas pour découvrir U&D</span>
+                </a>
+            </div>
+            <div class="navSticky__tab">
+                <a class="navSticky__tabLink h6" href="#home">
+                    <span class="navSticky__label">Chiffres clés</span>
+                </a>
+            </div>
+            <div class="navSticky__tab">
+                <a class="navSticky__tabLink h6" href="#home">
+                    <span class="navSticky__label">Nos métiers</span>
+                </a>
+            </div>
+            <div class="navSticky__tab">
+                <a class="navSticky__tabLink h6" href="#home">
+                    <span class="navSticky__label">Réseau partenaire</span>
+                </a>
+            </div>
+            <div class="navSticky__tab">
+                <a class="navSticky__tabLink h6" href="#home">
+                    <span class="navSticky__label">Rentrons en contact</span>
+                </a>
+            </div>
         </nav>
     </section>
     <section class="section section__numbers--holder" id="#home">
@@ -81,8 +105,8 @@
 </div>
 {% block javascripts %}{% endblock %}
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
-<script src="{{ asset('assets/dist/js/bundle.js') }}"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
+<script defer src="{{ asset('assets/dist/js/bundle.js') }}"></script>
 {#<script src="https://d2bmpzuwfx796e.cloudfront.net/js/bundle.js.gz"></script>#}
 </body>
 </html>

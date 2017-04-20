@@ -4,7 +4,7 @@ let scrollTrigger = {
             let windowY = window.scrollY;
 
             this.triggerClass('.containerBubbles', 200, windowY);
-            this.triggerClass('.number', 200, windowY)
+            this.triggerClass('.number', -100, windowY)
         };
     },
 
@@ -12,7 +12,7 @@ let scrollTrigger = {
         let container = document.querySelector(el);
         let posContainer = container.offsetTop;
         let active = false;
-        let condition = (ref > (posContainer - offset));
+        let condition = (ref > (posContainer - (offset)));
 
         if (condition && active == false) {
             container.classList.add('active');
