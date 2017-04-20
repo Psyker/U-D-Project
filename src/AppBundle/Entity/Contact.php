@@ -67,12 +67,7 @@ class Contact
      * @ORM\Column(name="call_at", type="datetime", nullable=true)
      */
     private $callAt;
-
-    /**
-     * @ORM\Column(name="created_at", type="datetime", nullable=true)
-     * @var \DateTime
-     */
-    private $createdAt;
+    
 
     public function __construct()
     {
