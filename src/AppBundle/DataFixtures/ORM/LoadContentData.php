@@ -22,7 +22,7 @@ class LoadContentData extends AbstractFixture implements FixtureInterface
     private function buildContentBlocks()
     {
         return [
-          'Accueil', 'Qui sommes-nous', 'Notre savoir-faire', 'Les chiffres clés', 'Nos partenaires', 'Contact', 'Mentions légales'
+          'Accueil', 'Les chiffres clés', 'Nos métiers', 'Nos partenaires', 'Contact', 'Mentions légales'
         ];
     }
 
