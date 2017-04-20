@@ -8,8 +8,10 @@
 .section__landing
   width: 100vw
   display: flex
+  justify-content: center
   flex-flow: row wrap
-  padding: 245px 30px 0 30px
+  padding: 245px 0 0
+
   @include large
     padding: 200px 0 50px 0
     justify-content: space-around
@@ -36,7 +38,7 @@
     height: 435px
 
 .landing__text--holder
-  max-width: 70%
+  max-width: 80%
   @include large
     width: 40vw
 
@@ -58,7 +60,9 @@
 
 .section__numbers--holder
   background: #ffffff
-  padding: 100px 37.5px 0
+  padding: 100px 37.5px 120px
+  @include large
+    padding: 100px 37.5px 0
 
 .section__numbers
   width: 100vw
