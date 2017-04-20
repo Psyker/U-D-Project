@@ -48,9 +48,6 @@ class PartnerType extends AbstractType
                     'class' => 'form-input'
                 ]
             ])
-            ->add('visible', CheckboxType::class, [
-                'label' => 'Visible :',
-            ])
             ->add('rank', IntegerType::class, [
                 'label' => 'Ordre :',
                 'attr' => [

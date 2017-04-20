@@ -4,7 +4,7 @@
 
     <section class="section__jobs" id="section__jobs">
         <div class="section__container">
-            <h2 class="h3 section__title color-white">Nos métiers</h2>
+            <h2 class="h3 section__title color-white">{{ contentBlocks.2.textBlocks.0.title }}</h2>
         </div>
         <div class="section__content">
             <div class="categories">
@@ -12,159 +12,54 @@
                     <div class="category__illustration">
                         <img src="{{ asset('assets/dist/img/Business.svg') }}" alt="icon business" class="category__icon">
                     </div>
-                    <h2 class="category__title h5">Spécialiste de l'isolation</h2>
-                    <p class="category__desccription h6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                        posuere congue arcu quis elementum. Aliquam a nibh quis massa rhoncus dapibus. Suspendisse
-                        vestibulum, neque et porttitor rutrum, elit lectus sollicitudin orci, vel rhoncus nisi mi vel
-                        ante. Proin tempor lobortis dolor, a blandit sapien aliquet nec.
+                    <h2 class="category__title h5">{{ contentBlocks.2.textBlocks.1.title }}</h2>
+                    <p class="category__desccription h6">{{ contentBlocks.2.textBlocks.1.content }}
                     </p>
                 </div>
                 <div class="category">
                     <div class="category__illustration">
                         <img src="{{ asset('assets/dist/img/Help.svg') }}" alt="icon business" class="category__icon">
                     </div>
-                    <h2 class="category__title h5">Devoir de conseil</h2>
-                    <p class="category__desccription h6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                        posuere congue arcu quis elementum. Aliquam a nibh quis massa rhoncus dapibus. Suspendisse
-                        vestibulum, neque et porttitor rutrum, elit lectus sollicitudin orci, vel rhoncus nisi mi vel
-                        ante. Proin tempor lobortis dolor, a blandit sapien aliquet nec.
+                    <h2 class="category__title h5">{{ contentBlocks.2.textBlocks.2.title }}</h2>
+                    <p class="category__desccription h6">{{ contentBlocks.2.textBlocks.2.content }}
                     </p>
                 </div>
                 <div class="category">
                     <div class="category__illustration">
                         <img src="{{ asset('assets/dist/img/Cles.svg') }}" alt="icon business" class="category__icon">
                     </div>
-                    <h2 class="category__title h5">Spécialiste de l'isolation</h2>
-                    <p class="category__desccription h6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                        posuere congue arcu quis elementum. Aliquam a nibh quis massa rhoncus dapibus. Suspendisse
-                        vestibulum, neque et porttitor rutrum, elit lectus sollicitudin orci, vel rhoncus nisi mi vel
-                        ante. Proin tempor lobortis dolor, a blandit sapien aliquet nec.
+                    <h2 class="category__title h5">{{ contentBlocks.2.textBlocks.3.title }}</h2>
+                    <p class="category__desccription h6">{{ contentBlocks.2.textBlocks.3.content }}
                     </p>
                 </div>
             </div>
             <div class="section__description">
-                <h3 class="h4 description__title">L'expertise de notre métier</h3>
-                <p class="description__paragraph h6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    posuere congue arcu quis elementum. Aliquam a nibh quis massa rhoncus dapibus. Suspendisse
-                    vestibulum, neque et porttitor rutrum, elit lectus sollicitudin orci, vel rhoncus nisi mi vel
-                    ante. Proin tempor lobortis dolor, a blandit sapien aliquet nec.
+                <h3 class="h4 description__title">{{ contentBlocks.2.textBlocks.4.title }}</h3>
+                <p class="description__paragraph h6">{{ contentBlocks.2.textBlocks.4.content }}
                 </p>
-
             </div>
-
         </div>
     </section>
 
     <section class="section__partenaire" id="section__partenaire">
         <div class="section__container">
-            <h2 class="h3 section__title">Réseaux partenaires</h2>
-            <h4 class="section__subtitle h6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
-                aperiam beatae consequatur corporis culpa dicta dolorem facilis fugit libero magni minima molestiae
-                obcaecati, officia optio quo quod suscipit, veniam voluptatibus.
+            <h2 class="h3 section__title">{{ contentBlocks.3.textBlocks.0.title }}</h2>
+            <h4 class="section__subtitle h6">{{ contentBlocks.3.textBlocks.0.content }}
             </h4>
             <div class="section__content">
                 <div class="swipe">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
+                            {% for quote in quotes %}
                             <div class="swiper-slide">
                                 <div class="slide__content">
-                                    <p class="slide__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab cum
-                                        deserunt distinctio, dolore ksjdbs dks dks dks sk dskd s.
+                                    <p class="slide__description">{{ quote.text }}
                                     </p>
-                                    <h3 class="slide__title h5">Le nom de la persoone</h3>
-                                    <h4 class="slide__subtitle h6">Directeur de mes couilles</h4>
+                                    <h3 class="slide__title h5">{{ quote.firstname }} {{ quote.lastname }}</h3>
+                                    <h4 class="slide__subtitle h6">{{ quote.company }}</h4>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="slide__content">
-                                    <p class="slide__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab cum
-                                        deserunt distinctio, dolore ksjdbs dks dks dks sk dskd s.
-                                    </p>
-                                    <h3 class="slide__title h5">Le nom de la persoone</h3>
-                                    <h4 class="slide__subtitle h6">Directeur de mes couilles</h4>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="slide__content">
-                                    <p class="slide__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab cum
-                                        deserunt distinctio, dolore ksjdbs dks dks dks sk dskd s.
-                                    </p>
-                                    <h3 class="slide__title h5">Le nom de la persoone</h3>
-                                    <h4 class="slide__subtitle h6">Directeur de mes couilles</h4>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="slide__content">
-                                    <p class="slide__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab cum
-                                        deserunt distinctio, dolore ksjdbs dks dks dks sk dskd s.
-                                    </p>
-                                    <h3 class="slide__title h5">Le nom de la persoone</h3>
-                                    <h4 class="slide__subtitle h6">Directeur de mes couilles</h4>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="slide__content">
-                                    <p class="slide__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab cum
-                                        deserunt distinctio, dolore ksjdbs dks dks dks sk dskd s.
-                                    </p>
-                                    <h3 class="slide__title h5">Le nom de la persoone</h3>
-                                    <h4 class="slide__subtitle h6">Directeur de mes couilles</h4>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="slide__content">
-                                    <p class="slide__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab cum
-                                        deserunt distinctio, dolore ksjdbs dks dks dks sk dskd s.
-                                    </p>
-                                    <h3 class="slide__title h5">Le nom de la persoone</h3>
-                                    <h4 class="slide__subtitle h6">Directeur de mes couilles</h4>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="slide__content">
-                                    <p class="slide__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab cum
-                                        deserunt distinctio, dolore ksjdbs dks dks dks sk dskd s.
-                                    </p>
-                                    <h3 class="slide__title h5">Le nom de la persoone</h3>
-                                    <h4 class="slide__subtitle h6">Directeur de mes couilles</h4>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="slide__content">
-                                    <p class="slide__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab cum
-                                        deserunt distinctio, dolore ksjdbs dks dks dks sk dskd s.
-                                    </p>
-                                    <h3 class="slide__title h5">Le nom de la persoone</h3>
-                                    <h4 class="slide__subtitle h6">Directeur de mes couilles</h4>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="slide__content">
-                                    <p class="slide__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab cum
-                                        deserunt distinctio, dolore ksjdbs dks dks dks sk dskd s.
-                                    </p>
-                                    <h3 class="slide__title h5">Le nom de la persoone</h3>
-                                    <h4 class="slide__subtitle h6">Directeur de mes couilles</h4>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="slide__content">
-                                    <p class="slide__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab cum
-                                        deserunt distinctio, dolore ksjdbs dks dks dks sk dskd s.
-                                    </p>
-                                    <h3 class="slide__title h5">Le nom de la persoone</h3>
-                                    <h4 class="slide__subtitle h6">Directeur de mes couilles</h4>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="slide__content">
-                                    <p class="slide__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab cum
-                                        deserunt distinctio, dolore ksjdbs dks dks dks sk dskd s.
-                                    </p>
-                                    <h3 class="slide__title h5">Le nom de la persoone</h3>
-                                    <h4 class="slide__subtitle h6">Directeur de mes couilles</h4>
-                                </div>
-                            </div>
+                            {% endfor %}
                         </div>
 
                         <!-- If we need navigation buttons -->
@@ -179,48 +74,15 @@
                     </div>
                 </div>
                 <div class="containerBubbles">
+                    {% for partner in partners %}
                     <div class="bubble">
-                        <a href="#" class="bubble__link" target="_blank" title="lien vers le site client">
+                        <a href="{{ partner.url }}" class="bubble__link" target="_blank" title="lien vers le site client">
                             <div class="avatar__round">
-                                <img src="{{ asset('assets/dist/img/cat.jpeg') }}" alt="Logo de partenaire Cat" class="avatar__img">
+                                <img src="{{ asset('assets/app/img/uploads/partner/' ~ partner.logoName) }}" alt="{{ partner.alt }}" class="avatar__img">
                             </div>
                         </a>
                     </div>
-                    <div class="bubble">
-                        <a href="#" class="bubble__link" target="_blank" title="lien vers le site client">
-                            <div class="avatar__round">
-                                <img src="{{ asset('assets/dist/img/cat.jpeg') }}" alt="Logo de partenaire Cat" class="avatar__img">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="bubble">
-                        <a href="#" class="bubble__link" target="_blank" title="lien vers le site client">
-                            <div class="avatar__round">
-                                <img src="{{ asset('assets/dist/img/cat.jpeg') }}" alt="Logo de partenaire Cat" class="avatar__img">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="bubble">
-                        <a href="#" class="bubble__link" target="_blank" title="lien vers le site client">
-                            <div class="avatar__round">
-                                <img src="{{ asset('assets/dist/img/cat.jpeg') }}" alt="Logo de partenaire Cat" class="avatar__img">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="bubble">
-                        <a href="#" class="bubble__link" target="_blank" title="lien vers le site client">
-                            <div class="avatar__round">
-                                <img src="{{ asset('assets/dist/img/cat.jpeg') }}" alt="Logo de partenaire Cat" class="avatar__img">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="bubble">
-                        <a href="#" class="bubble__link" target="_blank" title="lien vers le site client">
-                            <div class="avatar__round">
-                                <img src="{{ asset('assets/dist/img/cat.jpeg') }}" alt="Logo de partenaire Cat" class="avatar__img">
-                            </div>
-                        </a>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -261,29 +123,12 @@
             </div>
             <div class="modal__details">
                 <div class="modal__header">
-                    <h3 class="h2 modal__title">Mentions légales</h3>
+                    <h3 class="h2 modal__title">{{ contentBlocks.5.textBlocks.0.title }}</h3>
                 </div>
                 <div class="modal__body">
                     <div class="modal__initContent">
                         <div class="modal__section">
-                            <h4 class="">Lorem <span class="color-primary">Ipsum</span></h4>
-                            <p class="modal__text">Lorem Ipsum dolor sit amet, consectetur adipisicing elit. Animi aperiam eum hic maxime
-                                nesciunt qui sunt? Debitis labore molestiae molestias tempore! A asperiores facere harum
-                                iste odio, repellat repellendus vitae?
-                            </p>
-                        </div>
-                        <div class="modal__section">
-                            <h4 class="">Lorem <span class="color-primary">Ipsum</span></h4>
-                            <p  class="modal__text">Lorem Ipsum dolor sit amet, consectetur adipisicing elit. Animi aperiam eum hic maxime
-                                nesciunt qui sunt? Debitis labore molestiae molestias tempore! A asperiores facere harum
-                                iste odio, repellat repellendus vitae?
-                            </p>
-                        </div>
-                        <div class="modal__section">
-                            <h4 class="">Lorem <span class="color-primary">Ipsum</span></h4>
-                            <p  class="modal__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aperiam eum hic maxime
-                                nesciunt qui sunt? Debitis labore molestiae molestias tempore! A asperiores facere harum
-                                iste odio, repellat repellendus vitae?
+                            <p>{{ contentBlocks.5.textBlocks.0.content }}
                             </p>
                         </div>
                     </div>

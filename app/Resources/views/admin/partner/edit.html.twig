@@ -3,6 +3,10 @@
 {% block body %}
     <h1>Éditer un partenaire</h1>
 
+    {{ form_start(delete_form) }}
+    <input class="btn btn-primary float-right mb-10" type="submit" value="Supprimer">
+    {{ form_end(delete_form) }}
+
     {{ form_start(form, {'attr': { 'class': 'form-group'}}) }}
         {{ form_label(form.name, null, {'label_attr': { 'class': 'form-label'} }) }}
         {{ form_widget(form.name) }}
@@ -12,21 +16,15 @@
         {{ form_widget(form.alt) }}
         {{ form_label(form.url, null, {'label_attr': { 'class': 'form-label'} }) }}
         {{ form_widget(form.url) }}
-        {{ form_label(form.visible, null, {'label_attr': { 'class': 'form-label'} }) }}
-        {{ form_widget(form.visible) }}
+
         {{ form_label(form.rank, null, {'label_attr': { 'class': 'form-label'} }) }}
         {{ form_widget(form.rank) }}
         <input class="btn btn-primary mt-10" type="submit" value="Editer">
     {{ form_end(form) }}
 
-    {#<ul>
-        <li>
-            <a href="{{ path('partner_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>#}
+
+
+
+
+
 {% endblock %}

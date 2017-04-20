@@ -62,7 +62,7 @@
                 </li>
             </ul>
         </div>
-        <div class="column col-10">
+        <div class="column col-9">
             {% for type, flashMessages in app.session.flashbag.all() %}
                 {% for flashMessage in flashMessages %}
                     <div class="toast toast-{{ type }}"
@@ -72,7 +72,7 @@
                     </div>
                 {% endfor %}
             {% endfor %}
-            <div class="container">
+            <div class="container container-marging">
                 {% block body %}{% endblock %}
             </div>
         </div>

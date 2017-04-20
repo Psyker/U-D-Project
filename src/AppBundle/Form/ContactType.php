@@ -75,6 +75,15 @@ class ContactType extends AbstractType
                     'class' => 'form__input'
                 ]
             ])
+            ->add('subject', TextType::class, [
+                'label' => 'Sujet',
+                'label_attr' => [
+                    'class' => 'form__label'
+                ],
+                'attr' => [
+                    'class' => 'form__input'
+                ]
+            ])
             ->add('message', TextareaType::class, [
                 'label' => 'Votre message',
                 'label_attr' => [

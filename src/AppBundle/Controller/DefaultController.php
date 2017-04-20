@@ -15,8 +15,12 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $partners = $em->getRepository('AppBundle:Partner')->findAll();
+        $quotes = $em->getRepository('AppBundle:Quotes')->findAll();
+        $contentBlocks = $em->getRepository('AppBundle:ContentBlock')->findBy([], ['id' => 'ASC']);
         return $this->render('front/default/index.html.twig', [
-            'partners' => $partners
+            'partners' => $partners,
+            'contentBlocks' => $contentBlocks,
+            'quotes' => $quotes
         ]);
     }
 }

@@ -7,9 +7,9 @@
     <a class="btn btn-primary mb-10" href="{{ path('partner_new') }}"><i class="icon icon-plus"></i>&nbsp;Ajouter un partenaire</a>
     <div class="divider"></div>
     {% for partner in partners %}
-        <div class="card col-3 inline-block">
+        <div class="card col-5 inline-block col-sm-12 col-md-12">
             <div class="card-image">
-                <img alt="{{ partner.alt }}" src="{{ asset('assets/app/img/uploads/partner/' ~ partner.logoName) }}" style="height: 200px; width: 100%;" class="img-fit-cover" />
+                <img alt="{{ partner.alt }}" src="{{ asset('assets/app/img/uploads/partner/' ~ partner.logoName) }}" style="height: 200px; width: 100%;" class="img-fit-contain" />
             </div>
             <div class="card-header">
                 <h4 class="card-title">{{ partner.name }}</h4>

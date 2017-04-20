@@ -19,7 +19,6 @@ class ContentBlockController extends Controller
      * @Route("admin/contentblock/{id}", name="content_block_show")
      * @param ContentBlock $contentBlock
      * @param Request $request
-     * @Method("GET")
      * @return Response
      */
     public function showAction(Request $request, ContentBlock $contentBlock)

@@ -23,6 +23,12 @@ class TextBlockType extends AbstractType
                     'class' => 'form-input'
                 ]
             ])
+            ->add('title', TextType::class, [
+                'label' => 'Titre',
+                'attr' => [
+                    'class' => 'form-input'
+                ]
+            ])
             ->add('content', TextareaType::class, [
                 'label' => 'Texte',
                 'attr' => [
