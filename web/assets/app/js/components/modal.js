@@ -7,7 +7,9 @@ let modal = {
 
         let buttonModal = document.querySelector('.modal__open');
 
-        buttonModal.addEventListener('click', () => {
+        buttonModal.addEventListener('click', (e) => {
+            e.preventDefault();
+
             document.querySelector('body').classList.add('body--noScroll');
             modal.classList.add('modal--active');
             lightbox.classList.add('lightbox--active');
