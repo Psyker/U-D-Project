@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <title>{% block title %}Welcome!{% endblock %}</title>
     {% block stylesheets %}{% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
@@ -30,12 +31,31 @@
             </div>
         </div>
         <nav class="navSticky">
-            <div class="navSticky__tab"><a class="navSticky__tabLink h6" href="#home">Allez vers le bas pour découvrir
-                    U&D</a></div>
-            <div class="navSticky__tab"><a class="navSticky__tabLink h6" href="#home">Chiffres clés</a></div>
-            <div class="navSticky__tab"><a class="navSticky__tabLink h6" href="#home">Nos métiers</a></div>
-            <div class="navSticky__tab"><a class="navSticky__tabLink h6" href="#home">Réseau partenaire</a></div>
-            <div class="navSticky__tab"><a class="navSticky__tabLink h6" href="#home">Rentrons en contact</a></div>
+            <div class="navSticky__tab">
+                <a class="navSticky__tabLink h6" href="#home">
+                    <span class="navSticky__label">Allez vers le bas pour découvrir U&D</span>
+                </a>
+            </div>
+            <div class="navSticky__tab">
+                <a class="navSticky__tabLink h6" href="#home">
+                    <span class="navSticky__label">Chiffres clés</span>
+                </a>
+            </div>
+            <div class="navSticky__tab">
+                <a class="navSticky__tabLink h6" href="#home">
+                    <span class="navSticky__label">Nos métiers</span>
+                </a>
+            </div>
+            <div class="navSticky__tab">
+                <a class="navSticky__tabLink h6" href="#home">
+                    <span class="navSticky__label">Réseau partenaire</span>
+                </a>
+            </div>
+            <div class="navSticky__tab">
+                <a class="navSticky__tabLink h6" href="#home">
+                    <span class="navSticky__label">Rentrons en contact</span>
+                </a>
+            </div>
         </nav>
     </section>
     <section class="section section__numbers--holder" id="#home">

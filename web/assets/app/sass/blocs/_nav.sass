@@ -2,7 +2,7 @@
 ///////////////////////////////
 .navSticky
   width: 100%
-  height: 50px
+  //height: 50px
   max-height: 50px
   position: fixed
   bottom: 0
@@ -61,13 +61,19 @@
 
 
 .navSticky__tabLink
+  padding: 10px 5px
   width: 100%
-  line-height: 50px
   display: inline-block
   padding: 0 5px
   @include medium
-    padding: 0 10px
+    padding: 10px
   .fa
     font-size: 30px
     line-height: 50px
     color: black
+
+.navSticky__label
+  @include font-size(0.5rem)
+  @include medium
+    font-size: 0.8rem
+    line-height: 1.2rem
