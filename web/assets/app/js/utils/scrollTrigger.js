@@ -1,5 +1,9 @@
 let scrollTrigger = {
     init () {
+        setTimeout(() => {
+            document.querySelector('.section__landing').classList.add('active');
+        }, 400);
+
         document.onscroll = () => {
             let windowY = window.scrollY;
 
