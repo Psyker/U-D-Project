@@ -22,9 +22,8 @@ let countingNumbers = {
 
     },
     saveElement (element) {
-        let cachedData = element.innerHTML;
+        let cachedData = element.getAttribute('data-number');
         let index = 0;
-        console.log(cachedData)
         element.innerHTML = 0;
 
         this.count(cachedData, element, index)
