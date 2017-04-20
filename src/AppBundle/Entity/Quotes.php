@@ -56,6 +56,17 @@ class Quotes
      */
     private $company;
 
+    /**
+     * @ORM\Column(name="created_at", type="datetime")
+     * @var \DateTime
+     */
+    private $createdAt;
+
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime();
+    }
+
 
     /**
      * Get id
@@ -185,6 +196,14 @@ class Quotes
     public function getCompany()
     {
         return $this->company;
+    }
+
+     /**
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
     }
 }
 
