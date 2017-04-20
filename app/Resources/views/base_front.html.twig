@@ -6,44 +6,73 @@
     {% block stylesheets %}{% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
     {#<link rel="stylesheet" href="https://d2bmpzuwfx796e.cloudfront.net/css/style.min.css.gz">#}
-    <link rel="stylesheet" href="{{ asset('assets/dist/css/style.min.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/dist/css/style.min.css') }}">
 
 </head>
 <body>
-<header class="header header--container">
-    {#Add LOGO#}
-    <img class="header-logo" src="logo.png" alt="logo">
-    <ul class="header_menu--link">
-        <li class="header--menu"><a class="header--menu-link" href="#home">Allez vers le bas pour découvrir U&D</a></li>
-        <li class="header--menu"><a class="header--menu-link" href="#home">menu</a></li>
-        <li class="header--menu"><a class="header--menu-link" href="#home">menu</a></li>
-        <li class="header--menu"><a class="header--menu-link" href="#home">menu</a></li>
-        <li class="header--menu"><a class="header--menu-link" href="#home">menu</a></li>
-    </ul>
-</header>
 <div class="container">
-    <section class="section section__landing">
-        <div class="landing__text">
-            <h1>A Visual Type Scale</h1>
-            <p>
-                Sed hendrerit suscipit cursus. In lorem leo, vehicula et dictum nec, pellentesque sed orci.
-                Duis quis ullamcorper tortor. Donec non varius elit. Integer id leo semper
-            </p>
-            <a class="landing__cta" href="#contact">Rentrons en contact</a>
+    <a href="#"><img class="header-logo" src="{{ asset('assets/app/img/pictos/logo-home.svg') }}" alt=""></a>
+    <section class="section section__landing-spacer">
+        <div class="section__landing">
+            <div class="landing__text--holder">
+                <h1 class="landing__title">A Visual Type Scale</h1>
+                <p class="">
+                    Sed hendrerit suscipit cursus. In lorem leo, vehicula et dictum nec, pellentesque sed orci.
+                    Duis quis ullamcorper tortor. Donec non varius elit. Integer id leo semper
+                </p>
+                <a class="landing__cta" href="#contact">Rentrons en contact</a>
+            </div>
+
+            <img class="section-img landing__img"
+                 src="{{ asset('assets/app/img/house-landing.png') }}"
+                 alt="batiment décoration">
         </div>
-        <img class="landing__img"
-             src="http://gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/Cartoons-PNG/SpongeBob_PNG_Picture.png?m=1435580698"
-             alt="batiment décoration">
+        <nav class="navSticky">
+            <div class="navSticky__tab"><a class="navSticky__tabLink h6" href="#home">Allez vers le bas pour découvrir
+                    U&D</a></div>
+            <div class="navSticky__tab"><a class="navSticky__tabLink h6" href="#home">Chiffres clés</a></div>
+            <div class="navSticky__tab"><a class="navSticky__tabLink h6" href="#home">Nos métiers</a></div>
+            <div class="navSticky__tab"><a class="navSticky__tabLink h6" href="#home">Réseau partenaire</a></div>
+            <div class="navSticky__tab"><a class="navSticky__tabLink h6" href="#home">Rentrons en contact</a></div>
+        </nav>
     </section>
-    <section class="section section__landing">
-        <p class="landing__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Aspernatur dignissimos omnis porro possimus quasi reprehenderit repudiandae voluptatibus.
-            Ad commodi eveniet ex incidunt magnam molestiae, nostrum officia saepe sit totam, veniam.
-        </p>
-        <img class="landing__img"
-             src="http://gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/Cartoons-PNG/SpongeBob_PNG_Picture.png?m=1435580698"
-             alt="batiment décoration">
+    <section class="section" id="#home">
+        <div class="section__numbers">
+            <div class="numbers__text">
+                <h2 class="numbers__title">A Visual Type Scale better <span class="strong-word">than</span> me</h2>
+                <div class="numbers__holder">
+                    <div class="numbersContainer">
+                        <span data-number= "34" class="number h2">
+                            0
+                        </span>
+                        <p class="number__description">Clients nous ont déjà rejoins l’année dernière en lorem ipsum</p>
+                    </div>
+                    <div class="numbersContainer">
+                        <span data-number= "34" class="number h2">
+                            0
+                        </span>
+                        <p class="number__description">Clients nous ont déjà rejoins l’année dernière en lorem ipsum</p>
+                    </div>
+                    <div class="numbersContainer">
+                        <span data-number= "132" class="number h2">
+                            0
+                        </span>
+                        <p class="number__description">Clients nous ont déjà rejoins l’année dernière en lorem ipsum</p>
+                    </div>
+                    <div class="numbersContainer">
+                        <span data-number= "145" class="number h2">
+                            0
+                        </span>
+                        <p class="number__description">Clients nous ont déjà rejoins l’année dernière en lorem ipsum</p>
+                    </div>
+                </div>
+            </div>
+            <div class="numbers__img">
+                <img class="numbers--img" src="{{ asset('assets/app/img/house-numbers.png') }}" alt="bâtiment décoration">
+            </div>
+        </div>
+
     </section>
     {% block body %}
     {% endblock %}

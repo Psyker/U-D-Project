@@ -1,8 +1,12 @@
 //Utils
 import './utils/scrollTrigger'
 
+import './components/nav'
+
+import './animation/countingNumbers'
+
 //Animation
-// import './animation/smoothFadeIn.js'
+import './animation/smoothScroll.js'
 
 //Components
 // import './components/graphic'

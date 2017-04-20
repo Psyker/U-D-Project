@@ -1,28 +1,39 @@
+.section
+  position: relative
+
+.section__landing-spacer
+  height: 100vh
+
 .section__landing
-  padding: 21rem 17rem 30rem 4rem
-  background: $grey-lighter
+  width: 100vw
+  padding: 200px 150px 50px 0
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-around
+
+.landing__title
+  margin: 20px 0 30px 0
 
 .landing__img
-  width: 50rem
-  height: 27rem
+  height: 435px
 
-.landing__text
+.landing__text--holder
+  width: 40vw
   display: flex
-  width: 59rem
-  height: 30rem
   flex-direction: column
-  justify-content: space-around
+
 
 .landing__cta
   position: relative
+  display: block
   width: 225px
   height: 55px
   padding: 19px
-  margin: 0 50px
+  margin: 85px 0 0 50px
   background: $yellow
-  border-radius: 2px
+  border-radius: 4px
   line-height: 0.9
-  box-shadow: 0 1px 15px -1px $grey
+  box-shadow: 0 1px 15px -1px #c1c1c1
   &:after
     content: url('../../app/img/pictos/right-arrow.svg')
     color: $grey
@@ -32,5 +43,53 @@
     position: absolute
     right: 20px
     top: 17px
+
+
+
+.section__numbers
+  padding: 100px 150px 50px 60px
+  width: 100vw
+  display: flex
+
+.numbers__text
+  width: 45vw
+  display: flex
+  flex-direction: column
+  justify-content: space-around
+
+.numbers__title
+  width: 30vw
+  margin: 0 0 110px 0
+
+.numbers__holder
+  display: flex
+  flex-flow: row wrap
+  width: 100%
+  justify-content: space-between
+
+.numbersContainer
+  width: 35%
+  margin: 0 0 65px 0
+
+.number
+  font-weight: 700
+  color: $grey
+  padding: 0 0 25px 0
+  display: block
+
+.number__description
+  color: $grey
+  font-size: 0.667rem
+  font-family: 'Open Sans', sans-serif
+  font-weight: light
+
+.numbers__img
+  width: 45vw
+  display: flex
+  justify-content: center
+  align-items: center
+
+.numbers--img
+  height: 315px
 
 
