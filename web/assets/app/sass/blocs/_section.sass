@@ -129,22 +129,10 @@
       width: 60%
     @include large
       width: 50%
-  .container__image
-    width: 55%
-    position: absolute
-    top: 50%
-    right: 20px
-    margin: -25% 0 0 0
-    z-index: 0
-    @include medium
-      width: 40%
-      position: relative
-      top: auto
-      right: auto
-      margin: 0
 
   .section__numbers
     display: flex
+    justify-content: space-between
 
   .numbers__text
     position: relative
@@ -193,6 +181,24 @@
     font-family: 'Open Sans', sans-serif
     font-weight: light
 
+  .container__image
+    width: 55%
+    position: absolute
+    top: 50%
+    right: 20px
+    margin: -20% 0 0 0
+    opacity: 0
+    z-index: 0
+    @include medium
+      width: 40%
+      position: relative
+      top: 100px
+      right: auto
+      margin: 0
+
+  &.active
+    .container__image
+      animation: fade-in-up 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) forwards
 
 ////////////////////////
 //// section contact ///
