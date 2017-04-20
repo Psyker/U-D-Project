@@ -24,7 +24,7 @@ class ContactRepository extends EntityRepository
     {
         return $this->createQueryBuilder('c')
             ->select('COUNT(c)')
-            ->where('c.phone IS NOT NULL')
+            ->where('c.called = false')
             ->getQuery()
             ->getSingleScalarResult();
     }

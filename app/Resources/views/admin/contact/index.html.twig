@@ -13,6 +13,7 @@
                 <th>N° Téléphone</th>
                 <th>Email</th>
                 <th>Apeller le</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -24,6 +25,11 @@
                 <td>+33 {{ contact.phone }}</td>
                 <td>{{ contact.email }}</td>
                 <td>{% if contact.callAt %}{{ contact.callAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                {% if not contact.called  %}
+                <td><a class="btn btn-primary" href="{{ path('contact_called', {'id': contact.id}) }}">Fait</a></td>
+                {% else %}
+                <td>Fait</td>
+                {% endif %}
             </tr>
         {% endfor %}
         </tbody>
