@@ -11,29 +11,32 @@
   flex-flow: row wrap
   padding: 245px 30px 0 30px
   @include large
-    padding: 200px 90px 50px 0
+    padding: 200px 0 50px 0
     justify-content: space-around
 
 .section_img
   position: absolute
   top: 115px
-  left: 50%
+  right: 0
   z-index: -1
+  width: 100%
   @include large
     position: initial
     display: flex
-    width: 38vw
+    width: 35vw
 
 .landing__img
-  position: relative
-  left: -50%
+  position: absolute
+  margin: 0 auto
+  left: 0
+  right: 0
   height: 225px
   @include large
     position: initial
     height: 435px
 
 .landing__text--holder
-  width: 100%
+  max-width: 70%
   @include large
     width: 40vw
 
