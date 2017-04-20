@@ -44,10 +44,21 @@ form
   .container__form__input select
     line-height: 3rem
 
+  #appbundle_contact_callAt_time
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 1.125rem 0 0 0
+    @include medium
+      display: block
+
   .container__form__input select
-    width: 25%
+    width: 45%
     display: inline-block
+    margin-top: 0
     margin-right: 10px
+    @include medium
+      width: 25%
     &:nth-child(2)
       margin-left: 10px
       margin-right: 0
