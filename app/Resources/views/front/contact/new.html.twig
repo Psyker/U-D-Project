@@ -1,6 +1,9 @@
 {{ form_start(form) }}
     {{ form_widget(form) }}
-    <input type="submit" value="Create" class="form__submit btn btn__primary"/>
+    <button type="submit" class="form__submit btn btn__primary">
+        <span>Envoyer le message</span>
+        <span class="form__submitIcon"><img src="{{ asset('assets/dist/img/arrow_right.svg') }}" alt="flèche vers la droite" class="btn__icon"></span>
+    </button>
 {{ form_end(form) }}
 
 

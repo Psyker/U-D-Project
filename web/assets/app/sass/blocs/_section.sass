@@ -121,17 +121,26 @@
       & + .category
         margin: 0
     &:hover
-      .category__illustration
+      .category__illustration .category__icon
         transform: rotateZ(90deg)
         transition: transform 0.4s cubic-bezier(0.4, 0.0, 0.2, 1)
+    &:nth-child(1):hover
+      .category__illustration .category__icon
+        transform: rotateZ(-90deg)
+    &:nth-child(2):hover
+      .category__illustration .category__icon
+        transform: rotateZ(360deg)
+
   .category__illustration
-    content: ' '
-    background: $brand-primary
-    width: 20px
-    height: 20px
+    //content: ' '
+    //background: $brand-primary
+    //width: 20px
+    //height: 20px
     margin: 0 0 2.125rem 0
-    transition: transform 0.2s cubic-bezier(0.4, 0.0, 0.2, 1)
     padding: 10px
+    .category__icon
+      transition: transform 0.2s cubic-bezier(0.4, 0.0, 0.2, 1)
+
   .category__title
     font-weight: 500
   .category__desccription

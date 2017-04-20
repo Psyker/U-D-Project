@@ -1,8 +1,35 @@
+button
+  overflow: hidden
+
 .btn
   @include font-size(1rem)
+  display: inline-flex
+  flex-shrink: 0
+  //flex-basis: 0
+  flex-grow: 0
+  justify-content: center
+  align-items: center
   border-radius: 3px
   padding: 0.8rem 1.2rem
+  width: auto
+  span + span
+    margin: 0 0 0 1.75rem
 
 .btn__primary
   background: $brand-primary
   box-shadow: 1.1px 1.7px 9px 0 rgba(0, 14, 21, 0.2)
+  position: relative
+  &:after
+    content: ' '
+    background-color: #ffdc82
+    opacity: 0
+    width: 0
+    height: 0
+    border-radius: 100%
+    position: absolute
+    top: 50%
+    left: 50%
+    animation: hoverButtonDown 0.1s cubic-bezier(0.4, 0.0, 0.2, 1) forwards
+  &:hover
+    &:after
+      animation: hoverButtonUp 0.5s cubic-bezier(0.4, 0.0, 0.2, 1) forwards
