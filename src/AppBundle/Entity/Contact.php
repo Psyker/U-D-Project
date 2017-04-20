@@ -56,6 +56,12 @@ class Contact
     private $email;
 
     /**
+     * @ORM\Column(name="created_at", type="datetime")
+     * @var \DateTime
+     */
+    private $createdAt;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="call_at", type="datetime", nullable=true)
@@ -66,11 +72,11 @@ class Contact
      * @ORM\Column(name="created_at", type="datetime", nullable=true)
      * @var \DateTime
      */
-    private $created_at;
+    private $createdAt;
 
     public function __construct()
     {
-        $this->created_at = new \DateTime();
+        $this->createdAt = new \DateTime();
     }
 
     /**
@@ -224,7 +230,7 @@ class Contact
      */
     public function getCreatedAt()
     {
-        return $this->created_at;
+        return $this->createdAt;
     }
 
 }

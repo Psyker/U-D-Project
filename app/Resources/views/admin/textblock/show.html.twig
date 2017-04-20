@@ -10,6 +10,7 @@
     {{ form_end(delete_form) }}
 
     {{ form_start(form, {'attr': { 'class': 'form-group'}}) }}
+    <input name="_csrf_token" value="{{ csrf_token('form') }}" type="hidden">
         {{ form_label(form.name, null, {'label_attr': { 'class': 'form-label'} }) }}
         {{ form_widget(form.name) }}
         {{ form_label(form.content, null, {'label_attr': { 'class': 'form-label'} }) }}
@@ -18,8 +19,5 @@
         {{ form_widget(form.position) }}
     <input class="btn btn-primary mt-10" type="submit" value="Editer">
     {{ form_end(form) }}
-
-
-
 
 {% endblock %}
