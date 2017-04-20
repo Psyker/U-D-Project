@@ -13,24 +13,28 @@
 </head>
 <body>
 <div class="container">
-    <a href="#"><img class="header-logo" src="{{ asset('assets/app/img/pictos/logo-home.svg') }}" alt=""></a>
-    <section class="section section__landing-spacer">
-        <div class="section__landing">
-            <div class="landing__text--holder">
-                <h1 class="landing__title">U&D, spécialiste du BTP<span class="strong-word">.</span></h1>
-                <p class="landing__text">
-                    Sed hendrerit suscipit cursus. In lorem leo, vehicula et dictum nec, pellentesque sed orci.
-                    Duis quis ullamcorper tortor. Donec non varius elit. Integer id leo semper
-                </p>
-                <a class="btn btn__primary" href="#contact">
-                    <span>Contactons-nous facilement</span>
-                    <span><img src="{{ asset('assets/dist/img/arrow_right.svg') }}" alt="flèche vers la droite" class="btn__icon"></span>
-                </a>
-            </div>
-            <div class="section_img">
-                <img class="section-img landing__img"
-                     src="{{ asset('assets/app/img/house-landing.png') }}"
-                     alt="batiment décoration">
+    <div class="brandNav">
+        <a href="#" alt="logo U&D" class="brandLogo"><img class="brandLogo__image" src="{{ asset('assets/app/img/pictos/logo-home.svg') }}" alt=""></a>
+    </div>
+
+    <header class="section__landing">
+        <div class="section__container">
+            <div class="section__content">
+                <div class="section__header">
+                    <h1 class="section__title">U&D, spécialiste du BTP<span class="text-branding">.</span></h1>
+                    <h2 class="h5 section__subtitle">
+                        Sed hendrerit suscipit cursus. In lorem leo, vehicula et dictum nec, pellentesque sed orci.
+                        Duis quis ullamcorper tortor. Donec non varius elit. Integer id leo semper.
+                    </h2>
+                    <a class="btn btn__primary section__landingButton" href="#contact">
+                        <span>Contactez-nous facilement</span>
+                        <span><img src="{{ asset('assets/dist/img/arrow_right.svg') }}" alt="flèche vers la droite" class="btn__icon"></span>
+                    </a>
+                </div>
+
+                <div class="container__image inner-shadow">
+                    <img src="{{ asset('assets/dist/img/Compo2.png') }}" alt="Logo de partenaire Cat" class="avatar__img">
+                </div>
             </div>
         </div>
         <nav class="navSticky">
@@ -41,29 +45,30 @@
                 </a>
             </div>
             <div class="navSticky__tab">
-                <a class="navSticky__tabLink h6" href="#home">
+                <a class="navSticky__tabLink h6" href="#numbers">
                     <span class="navSticky__label">Chiffres clés</span>
                 </a>
             </div>
             <div class="navSticky__tab">
-                <a class="navSticky__tabLink h6" href="#home">
+                <a class="navSticky__tabLink h6" href="#job">
                     <span class="navSticky__label">Nos métiers</span>
                 </a>
             </div>
             <div class="navSticky__tab">
-                <a class="navSticky__tabLink h6" href="#home">
+                <a class="navSticky__tabLink h6" href="#partner">
                     <span class="navSticky__label">Réseau partenaire</span>
                 </a>
             </div>
             <div class="navSticky__tab">
-                <a class="navSticky__tabLink h6" href="#home">
+                <a class="navSticky__tabLink h6" href="#contact">
                     <span class="navSticky__label">Rentrons en contact</span>
                 </a>
             </div>
         </nav>
-    </section>
-    <section class="section section__numbers--holder" id="#home">
-        <div class="section__numbers">
+    </header>
+
+    <section class="section__statistics" id="numbers">
+        <div class="section__numbers section__container">
             <div class="numbers__text">
                 <h2 class="numbers__title">A Visual Type Scale better <span class="strong-word">than</span> me</h2>
                 <div class="numbers__holder">
@@ -93,9 +98,8 @@
                     </div>
                 </div>
             </div>
-            <div class="numbers__img">
-                <img class="numbers--img" src="{{ asset('assets/app/img/house-numbers.png') }}"
-                     alt="bâtiment décoration">
+            <div class="inner-shadow container__image">
+                <img src="{{ asset('assets/dist/img/Compo3.png') }}" alt="image de bâtiments" class="numbers--img">
             </div>
         </div>
 
