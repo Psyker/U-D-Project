@@ -1,0 +1,76 @@
+.modal
+  position: fixed
+  align-items: center
+  justify-content: center
+  top: 0
+  bottom: 0
+  left: 0
+  width: 100%
+  display: none
+  padding: 20px
+  @include medium
+    padding: 80px 50px
+  @include large
+    padding: 80px 10%
+  @include x-large
+    padding: 80px 20px
+
+
+.modal__content
+  width: 100%
+  height: auto
+  min-height: 60%
+  max-height: 95%
+  position: relative
+  display: flex
+  background: #ffffff
+  opacity: 0.95
+  box-shadow: 2.6px 4.2px 5px 0 rgba(0, 14, 21, 0.09)
+  border-radius: 3px
+  overflow: hidden
+  @include large
+    width: 1280px
+    max-width: 1280px
+    margin: auto
+
+.modal__body
+  margin: 4rem 0 0 0
+
+.modal__section
+  & + .modal__section
+    margin: 2.25rem 0 0 0
+  p
+    margin: 1.5rem 0 0 0
+
+
+.modal--active
+  display: flex
+  z-index: $z-index-modal
+  animation: fadeIn 0.4s forwards
+
+
+.modal__details
+  max-height: 100%
+  padding: 70px 20px
+  overflow: hidden
+  overflow-y: scroll
+  @include medium
+    padding: 70px 40px
+
+  @include large
+    padding: 70px
+
+
+
+.modal__tools
+  width: 100%
+  position: absolute
+  top: 0
+  left: 0
+  display: flex
+  justify-content: space-between
+  background: white
+
+
+.modal__tool
+  padding: 16px
