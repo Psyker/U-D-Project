@@ -82,7 +82,7 @@ class Contact
 
     /**
      * @ORM\OneToOne(targetEntity="AppBundle\Entity\Answer", cascade={"remove"})
-     * @ORM\JoinColumn(onDelete="SET NULL")
+     * @ORM\JoinColumn(onDelete="SET NULL", nullable=true)
      * @var Answer
      */
     private $answer;

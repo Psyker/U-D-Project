@@ -29,15 +29,21 @@ class TextBlock
     private $name;
 
     /**
+     * @ORM\Column(name="title", type="string", length=255)
+     * @var string
+     */
+    private $title;
+
+    /**
      * @var string
      *
-     * @ORM\Column(name="content", type="text")
+     * @ORM\Column(name="content", type="text", nullable=true)
      */
     private $content;
 
     /**
      * @var integer
-     * @ORM\Column(name="position", type="integer")
+     * @ORM\Column(name="position", type="integer", nullable=true)
      */
     private $position;
 
@@ -115,12 +121,12 @@ class TextBlock
         return $this->contentBlock;
     }
 
-    /**
-     * @param ContentBlock $contentBlock
-     */
+
     public function setContentBlock(ContentBlock $contentBlock)
     {
         $this->contentBlock = $contentBlock;
+
+        return $this;
     }
 
     /**
@@ -131,12 +137,27 @@ class TextBlock
         return $this->position;
     }
 
-    /**
-     * @param mixed $position
-     */
+
     public function setPosition($position)
     {
         $this->position = $position;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    public function setTitle(string $title)
+    {
+        $this->title = $title;
+
+        return $this;
     }
 
 }

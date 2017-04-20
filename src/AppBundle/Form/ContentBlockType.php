@@ -21,12 +21,6 @@ class ContentBlockType extends AbstractType
                     'class' => 'form-input'
                 ],
                 'label' => 'Nom de la section :'
-            ])
-            ->add('position', IntegerType::class, [
-                'attr' => [
-                    'class' => 'form-input'
-                ],
-                'label' => 'Ordre'
             ]);
 
     }
