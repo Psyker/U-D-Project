@@ -3,6 +3,8 @@
 {% block body %}
 
     <h1>Boite de récéption</h1>
+    <p>La suppresion d'un message entrainera la suppresion de la réponse envoyée.</p>
+    <div class="divider"></div>
     {% if contacts|length > 0 %}
     {% for contact in contacts %}
         <div class="tile mt-10 pt-10">
@@ -17,8 +19,11 @@
                 <p class="tile-subtitle">{{ contact.message }}</p>
                 <p class="tile-subtitle"{{ contact.createdAt|date('Y-m-d H:i:s') }}></p>
             </div>
+            <div class="tile-action mr-10">
+                <a {% if contact.answer %}disabled="true" {% endif %} href="{{ path('contact_answer', {'id': contact.id}) }}" class="btn btn-primary">Contacter</a>
+            </div>
             <div class="tile-action">
-                <button class="btn btn-primary">Contacter</button>
+                <a href="{{ path('contact_delete', {'id': contact.id}) }}" class="btn btn-danger">Supprimer</a>
             </div>
         </div>
         <div class="divider"></div>

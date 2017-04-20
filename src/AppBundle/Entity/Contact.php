@@ -36,6 +36,12 @@ class Contact
     private $lastname;
 
     /**
+     * @ORM\Column(name="subject", type="string", length=255, nullable=false)
+     * @var string
+     */
+    private $subject;
+
+    /**
      * @var string
      * @ORM\Column(name="message", type="text", nullable=true)
      */
@@ -51,7 +57,7 @@ class Contact
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", nullable=true, length=255, unique=true)
+     * @ORM\Column(name="email", type="string", nullable=false, length=255, unique=true)
      */
     private $email;
 
@@ -67,6 +73,19 @@ class Contact
      * @ORM\Column(name="call_at", type="datetime", nullable=true)
      */
     private $callAt;
+
+    /**
+     * @ORM\Column(name="called", type="boolean")
+     * @var boolean
+     */
+    private $called;
+
+    /**
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Answer", cascade={"remove"})
+     * @ORM\JoinColumn(onDelete="SET NULL")
+     * @var Answer
+     */
+    private $answer;
     
 
     public function __construct()
@@ -227,6 +246,55 @@ class Contact
     {
         return $this->createdAt;
     }
+
+    /**
+     * @return bool
+     */
+    public function isCalled()
+    {
+        return $this->called;
+    }
+
+    /**
+     * @param bool $called
+     */
+    public function setCalled(bool $called)
+    {
+        $this->called = $called;
+    }
+
+    /**
+     * @return Answer
+     */
+    public function getAnswer()
+    {
+        return $this->answer;
+    }
+
+    /**
+     * @param Answer $answer
+     */
+    public function setAnswer($answer)
+    {
+        $this->answer = $answer;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSubject()
+    {
+        return $this->subject;
+    }
+
+    /**
+     * @param string $subject
+     */
+    public function setSubject(string $subject)
+    {
+        $this->subject = $subject;
+    }
+
 
 }
 
