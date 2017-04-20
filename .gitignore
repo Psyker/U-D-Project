@@ -18,3 +18,4 @@
 .DS_Store
 node_modules/
 web/assets/dist/
+web/assets/app/img/uploads/
