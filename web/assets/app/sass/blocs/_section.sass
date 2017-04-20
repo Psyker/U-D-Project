@@ -55,16 +55,30 @@
 //// section partenaire ///
 ///////////////////////////
 .section__partenaire
+  .section__content
+    flex-direction: column
+    @include large
+      flex-direction: row
   .swipe
+    order: 2
     width: 100%
-    @include medium
-      width: 70%
+    @include large
+      width: 50%
+      order: 1
+    @include x-large
+      width: 40%
+
+  .containerBubbles
+    width: 100%
+    order: 1
+    margin: 0 auto 80px 0
     @include large
       width: 40%
-  .containerBubbles
-    display: none
-    @include medium
-      display: block
+      order: 2
+      margin: -100px 0 0 10%
+    @include x-large
+      width: 50%
+      margin: -100px 0 0 10%
 
 ///////////////////////////
 ////     section jobs   ///
