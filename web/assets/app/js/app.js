@@ -1,5 +1,6 @@
 //Utils
 import './utils/scrollTrigger'
+import './utils/checkboxDetect'
 
 import './components/nav'
 import './components/swiper'
@@ -14,5 +15,3 @@ import './animation/smoothScroll.js'
 // import './components/graphic'
 
 // smoothFadeIn.init('#status');
-
-
