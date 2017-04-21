@@ -2,6 +2,8 @@
 
 namespace AppBundle\DataFixtures\ORM;
 
+use AppBundle\Entity\Answer;
+use AppBundle\Entity\Contact;
 use AppBundle\Entity\ContentBlock;
 use AppBundle\Entity\Partner;
 use AppBundle\Entity\Quotes;
@@ -195,6 +197,24 @@ Informations personnelles : « les informations qui permettent, sous quelque for
             $manager->persist($partner);
             $i++;
         }
+
+
+        $contact = new Contact();
+        $contact->setFirstname('Theo')
+            ->setLastname('Bourgoin')
+            ->setPhone('0617592918')
+            ->setSubject('Sujet de test');
+        $contact->setMessage('Je suis un message');
+        $contact->setCallAt(new \DateTime());
+        $contact->setEmail('bourgoi.theo@gmail.com');
+        $manager->persist($contact);
+        $answer = new Answer();
+        $answer->setMessage('Je suis une reponse')
+            ->setSubject('Sujet de test');
+            $answer->setParent($contact);
+        $contact->setAnswer($answer);
+        $manager->persist($answer);
+
 
         $manager->flush();
     }
