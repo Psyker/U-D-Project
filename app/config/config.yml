@@ -1,4 +1,5 @@
 imports:
+    - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
 
@@ -65,8 +66,8 @@ doctrine:
 # Swiftmailer Configuration
 swiftmailer:
     transport: gmail
-    username: "%mailer_user%"
-    password: "%mailer_password%"
+    username: "%symfony_mailer_user%"
+    password: "%symfony_mailer_password%"
 
 vich_uploader:
     db_driver: orm
