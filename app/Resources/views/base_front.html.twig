@@ -12,17 +12,33 @@
                    en isolation et en étanchéité." />
 
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <title>{% block title %}Welcome!{% endblock %}</title>
+    <title>{% block title %}U&D{% endblock %}</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('assets/dist/img/apple-icon-57x57.png') }}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('assets/dist/img/apple-icon-60x60.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('assets/dist/img/apple-icon-72x72.png') }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/dist/img/apple-icon-76x76.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('assets/dist/img/apple-icon-114x114.png') }}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('assets/dist/img/apple-icon-120x120.png') }}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('assets/dist/img/apple-icon-144x144.png') }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('assets/dist/img/apple-icon-152x152.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/dist/img/apple-icon-180x180.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{{ asset('assets/dist/img/android-icon-192x192.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/dist/img/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('assets/dist/img/favicon-96x96.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/dist/img/favicon-16x16.png') }}">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     {% block stylesheets %}{% endblock %}
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
     <link rel="stylesheet" href="{{ asset('assets/dist/css/style.min.css') }}">
 
 </head>
 <body>
-<div class="container">
+<div id="body__container">
     <div class="brandNav">
-        <a title="home" href="#" alt="logo U&D" class="brandLogo js-smoothScroll" id="brandLogo__image"><img class="brandLogo__image" src="{{ asset('assets/app/img/pictos/logo-home.svg') }}"></a>
+        <a title="home" href="#body__container js-smoothScroll" alt="logo U&D" class="brandLogo" id="brandLogo__image"><img class="brandLogo__image" src="{{ asset('assets/app/img/pictos/logo-home.svg') }}"></a>
     </div>
 
     <header class="section__landing">
@@ -33,7 +49,7 @@
                     <h2 class="h5 section__subtitle">
                         {{ contentBlocks.0.textBlocks.0.content }}
                     </h2>
-                    <a title="contactez-nous" class="btn btn__primary section__landingButton js-smoothScroll" href="#contact">
+                    <a title="contactez-nous" class="btn btn__primary section__landingButton js-smoothScroll" href="#section__contact">
                         <span>Contactez-nous facilement</span>
                         <span><img src="{{ asset('assets/dist/img/arrow_right.svg') }}" alt="flèche vers la droite" class="btn__icon"></span>
                     </a>
@@ -50,7 +66,7 @@
                     <img src="{{ asset('assets/dist/img/arrow_down_stripe.svg') }}" alt="flèche vers le bas" class="navSticky__iconDesktop">
                     <span class="navSticky__label">Allez vers le bas pour découvrir U&D</span>
                 </a>
-                <a href="#brandLogo__image" alt="logo U&D" class="navSticky__scrollTop"><img class="brandLogo__image" src="{{ asset('assets/app/img/pictos/logo-home.svg') }}" alt=""></a>
+                <a href="#body__container" alt="logo U&D" class="navSticky__scrollTop js-smoothScroll"><img class="brandLogo__image" src="{{ asset('assets/app/img/pictos/logo-home.svg') }}" alt=""></a>
             </div>
             <div class="navSticky__tab">
                 <a title="Chiffres clés" class="navSticky__tabLink h6 js-smoothScroll" href="#section__statistics">
