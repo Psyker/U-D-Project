@@ -1,5 +1,43 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
+    <div class="input-group">
+        {{ form_label(form.firstname) }}
+        {{ form_widget(form.firstname) }}
+    </div>
+    <div class="input-group">
+        {{ form_label(form.lastname) }}
+        {{ form_widget(form.lastname) }}
+
+    </div>
+<div class="input-group">
+    {{ form_label(form.email) }}
+    {{ form_widget(form.email) }}
+
+</div>
+<div class="input-group">
+
+    {{ form_label(form.subject) }}
+    {{ form_widget(form.subject) }}
+</div>
+<div class="input-group">
+    {{ form_label(form.message) }}
+    {{ form_widget(form.message) }}
+</div>
+
+    <div class="input-group">
+        <input type="checkbox" id="checkbox__call" />
+        <label for="checkbox__call" class="checkbox__call">Je veux être rappelé</label>
+    </div>
+
+<div class="form-group">
+    {{ form_label(form.phone, null, {'label_attr': { 'class': 'form__label'} }) }}
+    {{ form_widget(form.phone) }}
+    {{ form_label(form.callAt, null, {'label_attr': { 'class': 'form__label'} }) }}
+    {{ form_widget(form.callAt) }}
+</div>
+
+
+
+
     <button type="submit" class="form__submit btn btn__primary">
         <span>Envoyer le message</span>
         <span class="form__submitIcon"><img src="{{ asset('assets/dist/img/arrow_right.svg') }}" alt="flèche vers la droite" class="btn__icon"></span>

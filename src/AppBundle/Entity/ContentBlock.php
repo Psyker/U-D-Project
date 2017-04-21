@@ -39,7 +39,7 @@ class ContentBlock
      * @var integer
      */
     private $position;
-    
+
 
     /**
      * Get id
@@ -94,7 +94,7 @@ class ContentBlock
     /**
      * @return int
      */
-    public function getPosition(): int
+    public function getPosition()
     {
         return $this->position;
     }
@@ -102,7 +102,7 @@ class ContentBlock
     /**
      * @param int $position
      */
-    public function setPosition(int $position)
+    public function setPosition($position)
     {
         $this->position = $position;
     }

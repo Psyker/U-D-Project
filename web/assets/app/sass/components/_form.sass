@@ -18,6 +18,9 @@ form
         display: none
         opacity: 0
 
+  .input-group
+      margin: 2rem 0 0 0
+
   .form__label,
   .form__input,
   .form__textarea,
@@ -44,10 +47,21 @@ form
   .container__form__input select
     line-height: 3rem
 
+  #appbundle_contact_callAt_time
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 1.125rem 0 0 0
+    @include medium
+      display: block
+
   .container__form__input select
-    width: 25%
+    width: 45%
     display: inline-block
+    margin-top: 0
     margin-right: 10px
+    @include medium
+      width: 25%
     &:nth-child(2)
       margin-left: 10px
       margin-right: 0
@@ -65,7 +79,85 @@ form
     &:focus
       outline: none
 
+
+
+.form-group
+  height: 0
+  max-height: 0
+  overflow: hidden
+  &.active
+    animation: openFormGroup 0.4s cubic-bezier(0.4, 0.0, 0.2, 1) forwards
+  &.close
+    animation: closeFormGroup 0.2s cubic-bezier(0.4, 0.0, 0.2, 1) forwards
+
 .optional
   &:after
     content: " (optionnel)"
     font-size: 0.8rem
+
+
+textarea:focus,
+input:focus,
+input[type]:focus,
+.uneditable-input:focus
+  border: 1px solid $brand-primary
+  box-shadow: 0 1px 1px rgba($brand-primary, 0.075) inset, 0 0 8px rgba($brand-primary, 0.6)
+  outline: 0 none
+
+
+//////////////////////////
+///// Custom Checkbox ////
+/////////////////////////
+
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked
+  position: absolute
+  left: -9999px
+
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label
+  position: relative
+  padding-left: 1.95em
+  cursor: pointer
+
+
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before
+  content: ''
+  position: absolute
+  left: 0
+  top: 0
+  width: 1.25em
+  height: 1.25em
+  border: 2px solid #ccc
+  background: #fff
+  border-radius: 4px
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.1)
+
+
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after
+  content: '✔'
+  position: absolute
+  top: .15em
+  left: .25em
+  font-size: 1.1em
+  line-height: 0.8
+  color: $brand-primary
+  transition: all .2s
+
+
+[type="checkbox"]:not(:checked) + label:after
+  opacity: 0
+  transform: scale(0)
+
+[type="checkbox"]:checked + label:after
+  opacity: 1
+  transform: scale(1)
+
+
+/* accessibility */
+[type="checkbox"]:checked:focus + label:before,
+[type="checkbox"]:not(:checked):focus + label:before
+  border: 1px solid lighten($brand-primary, 20%)
+
