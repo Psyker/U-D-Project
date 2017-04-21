@@ -6,21 +6,7 @@ let navSticky = {
         let windowWidth = window.innerWidth
             || document.documentElement.clientWidth
             || document.body.clientWidth;
-        let idSetTimeout;
         let active = false;
-
-        window.onresize = () => {
-            clearTimeout(idSetTimeout);
-            idSetTimeout = setTimeout(() => {
-                window.scrollTo(0, 0);
-
-                posNavSticky = navSticky.offsetTop;
-                position = window.pageYOffset || document.documentElement.scrollTop;
-                windowWidth = window.innerWidth
-                    || document.documentElement.clientWidth
-                    || document.body.clientWidth;
-            }, 500);
-        };
 
         window.onscroll = () => {
             let scroll = window.pageYOffset || document.documentElement.scrollTop;
