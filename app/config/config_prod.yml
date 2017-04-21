@@ -20,6 +20,10 @@ monolog:
         console:
             type: console
 
+doctrine:
+    dbal:
+        url: "%database_url%"
+
 swiftmailer:
     disable_delivery: false
     delivery_addresses: ['bourgoi.theo@gmail.com']
