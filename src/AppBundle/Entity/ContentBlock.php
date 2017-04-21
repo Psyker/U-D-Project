@@ -102,7 +102,7 @@ class ContentBlock
     /**
      * @param int $position
      */
-    public function setPosition(int $position)
+    public function setPosition($position)
     {
         $this->position = $position;
     }
