@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Back-Office{% endblock %}</title>
+    {% block stylesheets %}
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Poppins" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('assets/app/lib/spectre/spectre.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/app/lib/spectre/spectre-exp.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/app/lib/spectre/spectre-icons.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/app/lib/spectre/custom.css') }}">
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+</head>
+<body>
+    <div class="container">
+        <div class="columns centered text-center" style="margin-top: 30vh">
+            {% block body %}{% endblock %}
+        </div>
+    </div>
+    {% block javascripts %}{% endblock %}
+</body>
+</html>
