@@ -6,7 +6,6 @@
     <title>{% block title %}Welcome!{% endblock %}</title>
     {% block stylesheets %}{% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
-    {#<link rel="stylesheet" href="https://d2bmpzuwfx796e.cloudfront.net/css/style.min.css.gz">#}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
     <link rel="stylesheet" href="{{ asset('assets/dist/css/style.min.css') }}">
 
@@ -21,7 +20,7 @@
         <div class="section__container">
             <div class="section__content">
                 <div class="section__header">
-                    <h1 class="section__title">{{ contentBlocks.0.textBlocks.0.title }}<span class="text-branding">.</span></h1>
+                    <h1 class="section__title">{{ contentBlocks.0.textBlocks.0.title }}</h1>
                     <h2 class="h5 section__subtitle">
                         {{ contentBlocks.0.textBlocks.0.content }}
                     </h2>
@@ -85,10 +84,10 @@
                 <h2 class="section__title">{{ contentBlocks.1.textBlocks.0.title }}</h2>
                 <div class="numbers__holder">
                     <div class="numbersContainer">
-                        <span data-number="{{ contentBlocks.1.textBlocks.1.title }}" class="number h2">
+                        <span data-number="{{ contentBlocks.1.textBlocks.4.title }}" class="number h2">
                             0
                         </span>
-                        <p class="number__description">{{ contentBlocks.1.textBlocks.1.content }}</p>
+                        <p class="number__description">{{ contentBlocks.1.textBlocks.4.content }}</p>
                     </div>
                     <div class="numbersContainer">
                         <span data-number="{{ contentBlocks.1.textBlocks.2.title }}" class="number h2">
@@ -103,10 +102,10 @@
                         <p class="number__description">{{ contentBlocks.1.textBlocks.3.content }}</p>
                     </div>
                     <div class="numbersContainer">
-                        <span data-number="{{ contentBlocks.1.textBlocks.4.title }}" class="number h2">
+                        <span data-number="{{ contentBlocks.1.textBlocks.1.title }}" class="number h2">
                             0
                         </span>
-                        <p class="number__description">{{ contentBlocks.1.textBlocks.4.content }}</p>
+                        <p class="number__description">{{ contentBlocks.1.textBlocks.1.content }}</p>
                     </div>
                 </div>
             </div>
