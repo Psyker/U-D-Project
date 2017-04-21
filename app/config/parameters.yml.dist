@@ -11,8 +11,8 @@ parameters:
     #database_path: '%kernel.root_dir%/../var/data/data.sqlite'
 
     mailer_transport: gmail
-    usermail: "%usermail%"
-    passwordmail: "%passwordmail%"
+    usermail: "%tesmail%"
+    passwordmail: "%testpassword%"
 
 
     # A secret key that's used to generate certain security-related tokens

@@ -66,8 +66,8 @@ doctrine:
 # Swiftmailer Configuration
 swiftmailer:
     transport: gmail
-    username: "%env(mailer_user)%"
-    password: "%env(mailer_password)%"
+    username: "%env(testmail)%"
+    password: "%env(testpassword)%"
 
 vich_uploader:
     db_driver: orm
