@@ -1,6 +1,4 @@
 {% block body %}
-    <div style="position: absolute; z-index: -1; top: 50%; left: 50%; margin-left: -10%">
-
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey | trans(error.messageData, 'security') }}</div>
     {% endif %}
