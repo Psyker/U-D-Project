@@ -21,5 +21,8 @@ monolog:
             type: console
 
 swiftmailer:
+    transport: gmail
+    username: "%mailer_user%"
+    password: "%mailer_password%"
     disable_delivery: false
     delivery_addresses: ['%mailer_user%']
