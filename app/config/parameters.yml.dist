@@ -13,6 +13,7 @@ parameters:
     mailer_transport: gmail
     usermail: "%env(testmail)%"
     passwordmail: "%env(testpassword)%"
+    CLEARDB_DATABASE_URL: "%env(DBURL)%"
 
 
     # A secret key that's used to generate certain security-related tokens
