@@ -22,4 +22,4 @@ monolog:
 
 swiftmailer:
     disable_delivery: false
-    delivery_addresses: ['%symfony_mailer_user%']
+    delivery_addresses: ['bourgoi.theo@gmail.com']
