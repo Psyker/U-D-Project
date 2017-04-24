@@ -2,6 +2,15 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
+    <meta property="og:title" content="U&D" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.ud-btp.herokuapp.com" />
+    <meta property="og:image" content="U-D-Project/Logo.png" />
+    <meta property="og:description"
+          content="Acteur majeur en Ile-de-France,
+                   U&D vous accompagne depuis 2012 dans vos projet de gros oeuvres,
+                   en isolation et en étanchéité." />
+
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <title>{% block title %}U&D{% endblock %}</title>
     <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('assets/dist/img/apple-icon-57x57.png') }}">
@@ -29,7 +38,7 @@
 <body>
 <div id="body__container">
     <div class="brandNav">
-        <a title="home" href="#body__container" alt="logo U&D" class="brandLogo" id="brandLogo__image"><img class="brandLogo__image" src="{{ asset('assets/app/img/pictos/logo-home.svg') }}"></a>
+        <a title="home" href="#body__container" alt="logo U&D" class="brandLogo js-smoothScroll" id="brandLogo__image"><img class="brandLogo__image" src="{{ asset('assets/app/img/pictos/logo-home.svg') }}"></a>
     </div>
 
     <header class="section__landing">
