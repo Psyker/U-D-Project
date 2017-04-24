@@ -6,7 +6,26 @@ let navSticky = {
         let windowWidth = window.innerWidth
             || document.documentElement.clientWidth
             || document.body.clientWidth;
+        let idSetTimeout;
+        let windowHeight;
         let active = false;
+
+        window.onresize = () => {
+            clearTimeout(idSetTimeout);
+            idSetTimeout = setTimeout(() => {
+                windowHeight = window.innerHeight
+                    || document.documentElement.clientHeight
+                    || document.body.clientHeight;
+                posNavSticky = windowHeight - navSticky.offsetHeight;
+                position = window.pageYOffset || document.documentElement.scrollTop;
+
+                windowWidth = window.innerWidth
+                    || document.documentElement.clientWidth
+                    || document.body.clientWidth;
+
+                console.log(posNavSticky);
+            }, 500);
+        };
 
         window.onscroll = () => {
             let scroll = window.pageYOffset || document.documentElement.scrollTop;
