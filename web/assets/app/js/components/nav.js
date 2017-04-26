@@ -7,18 +7,23 @@ let navSticky = {
             || document.documentElement.clientWidth
             || document.body.clientWidth;
         let idSetTimeout;
+        let windowHeight;
         let active = false;
 
         window.onresize = () => {
             clearTimeout(idSetTimeout);
             idSetTimeout = setTimeout(() => {
-                window.scrollTo(0, 0);
-
-                posNavSticky = navSticky.offsetTop;
+                windowHeight = window.innerHeight
+                    || document.documentElement.clientHeight
+                    || document.body.clientHeight;
+                posNavSticky = windowHeight - navSticky.offsetHeight;
                 position = window.pageYOffset || document.documentElement.scrollTop;
+
                 windowWidth = window.innerWidth
                     || document.documentElement.clientWidth
                     || document.body.clientWidth;
+
+                console.log(posNavSticky);
             }, 500);
         };
 

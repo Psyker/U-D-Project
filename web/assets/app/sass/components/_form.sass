@@ -18,8 +18,18 @@ form
         display: none
         opacity: 0
 
-  .input-group
-      margin: 2rem 0 0 0
+  .input-group + .input-group,
+  .input-group + .input-group-flex,
+  .input-group-flex + .input-group
+      margin: 1.3rem 0 0 0
+
+  .input-group-flex
+    display: flex
+    justify-content: space-between
+    align-items: center
+    .input-group
+      margin: 0
+      width: 48%
 
   .form__label,
   .form__input,
@@ -40,7 +50,7 @@ form
     border: solid 1px #a3b4bc
     background: $gray
     padding: 0 1.1rem
-    margin: 1.125rem 0 0 0
+    margin: 0.5rem 0 0 0
 
   .form__input,
   .container__form__input input,

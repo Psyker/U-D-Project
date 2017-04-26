@@ -8,9 +8,9 @@
 .section__container
   padding: 80px 20px
   @include medium
-    padding: 80px 50px
-  @include large
-    padding: 80px 10%
+    padding: 80px 40px
+  //@include large
+  //  padding: 80px 10%
   @include x-large
     width: 1280px
     max-width: 1280px
@@ -55,7 +55,7 @@
     height: 100%
     padding: 20px
     @include medium
-      padding: 80px
+      padding: 80px 40px
     @include x-large
       width: 100%
       max-width: 100%
@@ -111,7 +111,7 @@
   .inner-shadow
     &:after
       height: 400px
-      background: linear-gradient(transparent, $gray)
+      background: linear-gradient(rgba($gray, 0.1), $gray)
   &.active
     .container__image
       animation: fade-in-up 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) forwards
@@ -177,9 +177,8 @@
 
   .number__description
     color: $grey
-    font-size: 0.667rem
-    font-family: 'Open Sans', sans-serif
-    font-weight: light
+    //font-family: 'Open Sans', sans-serif
+    //font-weight: light
 
   .container__image
     width: 55%
@@ -211,8 +210,10 @@
   .container__image
     width: 40%
     max-width: 40%
+    align-self: flex-start
     display: none
     opacity: 0
+    padding: 100px 0 0 0
     @include medium
       display: block
   &.active
@@ -268,26 +269,26 @@
     margin: 0
     @include medium
       height: 500px
-      padding: 125px 10% 0 10%
+      padding: 80px 10% 0 10%
     @include large
       height: 600px
-      padding: 150px 15% 0 15%
+      padding: 80px 15% 0 15%
   .section__content
     width: 90%
     display: block
     background: #fcfcfc
-    transform: translateY(-150px)
+    transform: translateY(-110px)
     box-shadow: 2.6px 4.2px 5px 0 rgba(0, 14, 21, 0.09)
     padding: 4.38rem 20px
     margin: 0 auto
     @include medium
       width: 80%
-      transform: translateY(-250px)
+      transform: translateY(-260px)
       padding: 4.38rem 5%
       margin: 0 auto
     @include large
       width: 70%
-      transform: translateY(-300px)
+      transform: translateY(-360px)
       padding: 4.38rem 10%
       margin: 0 auto
   .categories
@@ -334,8 +335,8 @@
 
 
 .section__jobs + section
-  margin: -150px 0 0 0
+  margin: -110px 0 0 0
   @include medium
-    margin: -250px 0 0 0
+    margin: -260px 0 0 0
   @include large
-    margin: -300px 0 0 0
+    margin: -360px 0 0 0
