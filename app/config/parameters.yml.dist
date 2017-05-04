@@ -2,7 +2,6 @@
 # Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
 # http://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
 parameters:
-    database_url: '%env(DATABASE_URL)%'
     database_host: ~
     database_port: ~
     database_name: ~
@@ -15,7 +14,6 @@ parameters:
     usermail: "%env(TEST_MAIL)%"
     passwordmail: "%env(TEST_PASSWORD)%"
     testmail: '%env(TEST_MAIL)%'
-    cleardb_database_url: us-cdbr-iron-east-03.cleardb.net
 
 
     # A secret key that's used to generate certain security-related tokens
