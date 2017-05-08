@@ -14,8 +14,6 @@ security:
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
-
-
         main:
             anonymous: ~
             form_login:
@@ -23,6 +21,9 @@ security:
                 check_path: /login
                 csrf_token_generator: security.csrf.token_manager
             provider: default
+            logout:
+                path: /logout
+                target: /
             # activate different ways to authenticate
 
             # http://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate

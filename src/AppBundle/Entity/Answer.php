@@ -22,7 +22,7 @@ class Answer
     private $id;
 
     /**
-     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Contact", cascade={"remove"})
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Contact")
      * @ORM\JoinColumn()
      * @var Contact
      */
