@@ -94,7 +94,7 @@ class ContactController extends Controller
         $em->remove($contact);
         $em->flush();
 
-        return $this->redirectToRoute('inbox_index');
+        return $this->redirectToRoute('contact_index');
     }
 
 
@@ -143,7 +143,7 @@ class ContactController extends Controller
             $this->get('mailer')->send($message);
             $em->flush();
             $this->addFlash('success', 'Votre réponse a bien été envoyé.');
-            return $this->redirectToRoute('inbox_index');
+            return $this->redirectToRoute('contact_index');
         }
 
         return $this->render('admin/contact/answer.html.twig', [
