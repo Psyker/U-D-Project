@@ -11,7 +11,6 @@ parameters:
     #database_path: '%kernel.root_dir%/../var/data/data.sqlite'
 
     mailer_transport: gmail
-    usermail: "%env(TEST_MAIL)%"
     passwordmail: "%env(TEST_PASSWORD)%"
     testmail: '%env(TEST_MAIL)%'
 

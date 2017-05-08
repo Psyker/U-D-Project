@@ -7,3 +7,6 @@ app_partner:
     resource: '@AppBundle/Controller/PartnerController.php'
     prefix: /admin
     type: annotation
+
+logout:
+    path: /logout
