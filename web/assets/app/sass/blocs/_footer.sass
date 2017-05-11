@@ -4,7 +4,7 @@
   justify-content: space-between
   align-items: center
   min-height: 80px
-  padding: 0 20px
+  padding: 0 10px
   @include medium
     padding: 0 50px
   @include large
@@ -20,10 +20,19 @@
 .footer-left
   flex-direction: column
   position: relative
+  top: -6px
+  @include medium
+    top: initial
+
+.footer-right
+  position: relative
+  top: -6px
+  @include medium
+    top: initial
 
 .footer__social
   display: flex
-  flex-flow: row wrap
+  flex-flow: row
 .social__tab
   width: 25px
   margin: 0
@@ -32,3 +41,8 @@
 
 .social__logo
   width: 15px
+
+.footer-separator
+  display: none
+  @include medium
+    display: initial
