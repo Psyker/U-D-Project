@@ -12,6 +12,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class TextBlock
 {
+
+    const TYPE_NONE = 0;
+    const TYPE_PERCENTAGE = 2;
+
     /**
      * @var int
      *
@@ -33,6 +37,12 @@ class TextBlock
      * @var string
      */
     private $title;
+
+    /**
+     * @ORM\Column(name="type", type="integer", nullable=true)
+     * @var int
+     */
+    private $type = null;
 
     /**
      * @var string
@@ -160,5 +170,19 @@ class TextBlock
         return $this;
     }
 
-}
+    /**
+     * @return int
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
 
+    /**
+     * @param int $type
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
+}

@@ -2,7 +2,9 @@
 
 namespace AppBundle\Form;
 
+use AppBundle\Entity\TextBlock;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -31,6 +33,16 @@ class TextBlockType extends AbstractType
             ])
             ->add('content', TextareaType::class, [
                 'label' => 'Texte',
+                'attr' => [
+                    'class' => 'form-input'
+                ]
+            ])
+            ->add('type', ChoiceType::class, [
+                'label' => 'Caractère spécial',
+                'choices' => [
+                    'Aucun' => TextBlock::TYPE_NONE,
+                    'Pourcentage' => TextBlock::TYPE_PERCENTAGE
+                ],
                 'attr' => [
                     'class' => 'form-input'
                 ]
