@@ -81,7 +81,7 @@ class Contact
     private $called;
 
     /**
-     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Answer", cascade={"remove"})
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Answer", cascade={"remove"}, orphanRemoval=true)
      * @ORM\JoinColumn(onDelete="SET NULL", nullable=true)
      * @var Answer
      */

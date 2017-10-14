@@ -23,7 +23,7 @@ class Answer
 
     /**
      * @ORM\OneToOne(targetEntity="AppBundle\Entity\Contact")
-     * @ORM\JoinColumn()
+     * @ORM\JoinColumn(onDelete="SET NULL")
      * @var Contact
      */
     private $parent;

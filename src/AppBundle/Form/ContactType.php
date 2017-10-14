@@ -104,7 +104,8 @@ class ContactType extends AbstractType
                     'class' => 'container__form__input'
                 ],
                 'html5' => true,
-                'format' => DateTimeType::HTML5_FORMAT
+                'format' => DateTimeType::HTML5_FORMAT,
+                'required' => false
             ));
 
         $builder->addEventListener(FormEvents::SUBMIT, function(FormEvent $event) {
